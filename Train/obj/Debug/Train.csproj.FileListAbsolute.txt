@@ -20,3 +20,4 @@ C:\Users\Илона\OneDrive\Рабочий стол\Проект ( Языков
 C:\Users\Илона\OneDrive\Рабочий стол\Проект ( Языковая игра - Поезд )\Новая папка\Train\Train\obj\Debug\Train.csproj.CoreCompileInputs.cache
 C:\Users\Илона\OneDrive\Рабочий стол\Проект ( Языковая игра - Поезд )\Новая папка\Train\Train\obj\Debug\Train.exe
 C:\Users\Илона\OneDrive\Рабочий стол\Проект ( Языковая игра - Поезд )\Новая папка\Train\Train\obj\Debug\Train.pdb
+C:\Users\Илона\OneDrive\Рабочий стол\Проект ( Языковая игра - Поезд )\Новая папка\Train\Train\obj\Debug\Train.FormMenu.resources

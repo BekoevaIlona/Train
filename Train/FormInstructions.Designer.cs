@@ -66,6 +66,7 @@
             this.buttonMenu.Size = new System.Drawing.Size(60, 60);
             this.buttonMenu.TabIndex = 1;
             this.buttonMenu.UseVisualStyleBackColor = true;
+            this.buttonMenu.Click += new System.EventHandler(this.buttonMenu_Click);
             // 
             // FormInstructions
             // 
