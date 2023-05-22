@@ -12,6 +12,7 @@ namespace Train
 {
     public partial class FormInstructions : Form
     {
+        FormMenu formMenu = new FormMenu();
         public FormInstructions()
         {
             InitializeComponent();
@@ -20,6 +21,12 @@ namespace Train
         private void buttonClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void buttonMenu_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            formMenu.ShowDialog();
         }
     }
 }
