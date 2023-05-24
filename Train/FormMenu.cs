@@ -13,6 +13,7 @@ namespace Train
     public partial class FormMenu : Form
     {
         FormInstructions instructions = new FormInstructions();
+        FormLnguageSelection lnguageSelection = new FormLnguageSelection();
         public FormMenu()
         {
             InitializeComponent();
@@ -37,6 +38,12 @@ namespace Train
         private void buttonExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void buttonLanguage_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            lnguageSelection.ShowDialog();
         }
     }
 }
