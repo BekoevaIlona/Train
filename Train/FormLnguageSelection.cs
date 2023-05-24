@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace Train
 {
-    public partial class FormInstructions : Form
+    public partial class FormLnguageSelection : Form
     {
         static FormMenu formMenu = new FormMenu();
-        public FormInstructions()
+        public FormLnguageSelection()
         {
             InitializeComponent();
         }
@@ -28,5 +28,11 @@ namespace Train
             this.Hide();
             formMenu.ShowDialog();
         }
+
+        private void FormLnguageSelection_Load(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

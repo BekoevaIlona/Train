@@ -33,7 +33,9 @@
             this.buttonLanguage = new System.Windows.Forms.Button();
             this.buttonTopic = new System.Windows.Forms.Button();
             this.buttonInstruction = new System.Windows.Forms.Button();
-            this.buttonExit = new System.Windows.Forms.Button();
+            this.buttonRating = new System.Windows.Forms.Button();
+            this.buttonEntrance = new System.Windows.Forms.Button();
+            this.buttonRentrance = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonClose
@@ -47,9 +49,10 @@
             this.buttonClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonClose.Font = new System.Drawing.Font("Cooper Black", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonClose.Location = new System.Drawing.Point(1479, 12);
+            this.buttonClose.Location = new System.Drawing.Point(1109, 10);
+            this.buttonClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonClose.Name = "buttonClose";
-            this.buttonClose.Size = new System.Drawing.Size(60, 60);
+            this.buttonClose.Size = new System.Drawing.Size(45, 49);
             this.buttonClose.TabIndex = 2;
             this.buttonClose.UseVisualStyleBackColor = true;
             this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
@@ -61,9 +64,10 @@
             this.buttonPlay.FlatAppearance.BorderSize = 6;
             this.buttonPlay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPlay.Font = new System.Drawing.Font("a_MachinaOrtoSls", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonPlay.Location = new System.Drawing.Point(619, 140);
+            this.buttonPlay.Location = new System.Drawing.Point(464, 114);
+            this.buttonPlay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonPlay.Name = "buttonPlay";
-            this.buttonPlay.Size = new System.Drawing.Size(424, 66);
+            this.buttonPlay.Size = new System.Drawing.Size(318, 54);
             this.buttonPlay.TabIndex = 3;
             this.buttonPlay.Text = "играть";
             this.buttonPlay.UseVisualStyleBackColor = false;
@@ -75,12 +79,14 @@
             this.buttonLanguage.FlatAppearance.BorderSize = 6;
             this.buttonLanguage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLanguage.Font = new System.Drawing.Font("a_MachinaOrtoSls", 22.2F, System.Drawing.FontStyle.Bold);
-            this.buttonLanguage.Location = new System.Drawing.Point(619, 240);
+            this.buttonLanguage.Location = new System.Drawing.Point(464, 244);
+            this.buttonLanguage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonLanguage.Name = "buttonLanguage";
-            this.buttonLanguage.Size = new System.Drawing.Size(424, 66);
+            this.buttonLanguage.Size = new System.Drawing.Size(318, 54);
             this.buttonLanguage.TabIndex = 4;
             this.buttonLanguage.Text = "язык";
             this.buttonLanguage.UseVisualStyleBackColor = false;
+            this.buttonLanguage.Click += new System.EventHandler(this.buttonLanguage_Click);
             // 
             // buttonTopic
             // 
@@ -89,9 +95,10 @@
             this.buttonTopic.FlatAppearance.BorderSize = 6;
             this.buttonTopic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonTopic.Font = new System.Drawing.Font("a_MachinaOrtoSls", 22.2F, System.Drawing.FontStyle.Bold);
-            this.buttonTopic.Location = new System.Drawing.Point(619, 340);
+            this.buttonTopic.Location = new System.Drawing.Point(464, 309);
+            this.buttonTopic.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonTopic.Name = "buttonTopic";
-            this.buttonTopic.Size = new System.Drawing.Size(424, 66);
+            this.buttonTopic.Size = new System.Drawing.Size(318, 54);
             this.buttonTopic.TabIndex = 5;
             this.buttonTopic.Text = "тематика";
             this.buttonTopic.UseVisualStyleBackColor = false;
@@ -103,35 +110,71 @@
             this.buttonInstruction.FlatAppearance.BorderSize = 6;
             this.buttonInstruction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonInstruction.Font = new System.Drawing.Font("a_MachinaOrtoSls", 22.2F, System.Drawing.FontStyle.Bold);
-            this.buttonInstruction.Location = new System.Drawing.Point(619, 440);
+            this.buttonInstruction.Location = new System.Drawing.Point(464, 374);
+            this.buttonInstruction.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonInstruction.Name = "buttonInstruction";
-            this.buttonInstruction.Size = new System.Drawing.Size(424, 66);
+            this.buttonInstruction.Size = new System.Drawing.Size(318, 54);
             this.buttonInstruction.TabIndex = 6;
             this.buttonInstruction.Text = "правила";
             this.buttonInstruction.UseVisualStyleBackColor = false;
+            this.buttonInstruction.Click += new System.EventHandler(this.buttonInstruction_Click);
             // 
-            // buttonExit
+            // buttonRating
             // 
-            this.buttonExit.BackColor = System.Drawing.Color.White;
-            this.buttonExit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(26)))), ((int)(((byte)(12)))));
-            this.buttonExit.FlatAppearance.BorderSize = 6;
-            this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonExit.Font = new System.Drawing.Font("a_MachinaOrtoSls", 22.2F, System.Drawing.FontStyle.Bold);
-            this.buttonExit.Location = new System.Drawing.Point(619, 540);
-            this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(424, 66);
-            this.buttonExit.TabIndex = 7;
-            this.buttonExit.Text = "выход";
-            this.buttonExit.UseVisualStyleBackColor = false;
+            this.buttonRating.BackColor = System.Drawing.Color.White;
+            this.buttonRating.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(26)))), ((int)(((byte)(12)))));
+            this.buttonRating.FlatAppearance.BorderSize = 6;
+            this.buttonRating.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRating.Font = new System.Drawing.Font("a_MachinaOrtoSls", 22.2F, System.Drawing.FontStyle.Bold);
+            this.buttonRating.Location = new System.Drawing.Point(464, 439);
+            this.buttonRating.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonRating.Name = "buttonRating";
+            this.buttonRating.Size = new System.Drawing.Size(318, 54);
+            this.buttonRating.TabIndex = 7;
+            this.buttonRating.Text = "рейтинг";
+            this.buttonRating.UseVisualStyleBackColor = false;
+            this.buttonRating.Click += new System.EventHandler(this.buttonExit_Click);
+            // 
+            // buttonEntrance
+            // 
+            this.buttonEntrance.BackColor = System.Drawing.Color.White;
+            this.buttonEntrance.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(26)))), ((int)(((byte)(12)))));
+            this.buttonEntrance.FlatAppearance.BorderSize = 6;
+            this.buttonEntrance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonEntrance.Font = new System.Drawing.Font("a_MachinaOrtoSls", 22.2F, System.Drawing.FontStyle.Bold);
+            this.buttonEntrance.Location = new System.Drawing.Point(464, 179);
+            this.buttonEntrance.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonEntrance.Name = "buttonEntrance";
+            this.buttonEntrance.Size = new System.Drawing.Size(110, 54);
+            this.buttonEntrance.TabIndex = 8;
+            this.buttonEntrance.Text = "вход";
+            this.buttonEntrance.UseVisualStyleBackColor = false;
+            // 
+            // buttonRentrance
+            // 
+            this.buttonRentrance.BackColor = System.Drawing.Color.White;
+            this.buttonRentrance.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(26)))), ((int)(((byte)(12)))));
+            this.buttonRentrance.FlatAppearance.BorderSize = 6;
+            this.buttonRentrance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRentrance.Font = new System.Drawing.Font("a_MachinaOrtoSls", 22.2F, System.Drawing.FontStyle.Bold);
+            this.buttonRentrance.Location = new System.Drawing.Point(579, 179);
+            this.buttonRentrance.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonRentrance.Name = "buttonRentrance";
+            this.buttonRentrance.Size = new System.Drawing.Size(203, 54);
+            this.buttonRentrance.TabIndex = 9;
+            this.buttonRentrance.Text = "регистрация";
+            this.buttonRentrance.UseVisualStyleBackColor = false;
             // 
             // FormMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Train.Properties.Resources.форма2_меню2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1567, 763);
-            this.Controls.Add(this.buttonExit);
+            this.ClientSize = new System.Drawing.Size(1167, 620);
+            this.Controls.Add(this.buttonRentrance);
+            this.Controls.Add(this.buttonEntrance);
+            this.Controls.Add(this.buttonRating);
             this.Controls.Add(this.buttonInstruction);
             this.Controls.Add(this.buttonTopic);
             this.Controls.Add(this.buttonLanguage);
@@ -139,6 +182,7 @@
             this.Controls.Add(this.buttonClose);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormMenu";
@@ -153,6 +197,8 @@
         private System.Windows.Forms.Button buttonLanguage;
         private System.Windows.Forms.Button buttonTopic;
         private System.Windows.Forms.Button buttonInstruction;
-        private System.Windows.Forms.Button buttonExit;
+        private System.Windows.Forms.Button buttonRating;
+        private System.Windows.Forms.Button buttonEntrance;
+        private System.Windows.Forms.Button buttonRentrance;
     }
 }

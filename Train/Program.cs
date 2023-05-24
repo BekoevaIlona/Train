@@ -16,7 +16,7 @@ namespace Train
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormInstructions());
+            Application.Run(new FormMenu());
         }
     }
 }
