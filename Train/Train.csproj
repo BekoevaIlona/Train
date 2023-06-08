@@ -46,17 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormAuthorization.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAuthorization.Designer.cs">
+      <DependentUpon>FormAuthorization.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormInstructions.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormInstructions.Designer.cs">
       <DependentUpon>FormInstructions.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormLnguageSelection.cs">
+    <Compile Include="FormLanguageSelection.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormLnguageSelection.Designer.cs">
-      <DependentUpon>FormLnguageSelection.cs</DependentUpon>
+    <Compile Include="FormLanguageSelection.Designer.cs">
+      <DependentUpon>FormLanguageSelection.cs</DependentUpon>
     </Compile>
     <Compile Include="FormMenu.cs">
       <SubType>Form</SubType>
@@ -66,12 +72,16 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="Resources\форма_авторизации.png" />
     <None Include="Resources\форма3_язык.png" />
+    <EmbeddedResource Include="FormAuthorization.resx">
+      <DependentUpon>FormAuthorization.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormInstructions.resx">
       <DependentUpon>FormInstructions.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormLnguageSelection.resx">
-      <DependentUpon>FormLnguageSelection.cs</DependentUpon>
+    <EmbeddedResource Include="FormLanguageSelection.resx">
+      <DependentUpon>FormLanguageSelection.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMenu.resx">
       <DependentUpon>FormMenu.cs</DependentUpon>
