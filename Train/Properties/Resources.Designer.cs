@@ -73,6 +73,26 @@ namespace Train.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap иконка_логин {
+            get {
+                object obj = ResourceManager.GetObject("иконка_логин", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap иконка_пароль {
+            get {
+                object obj = ResourceManager.GetObject("иконка_пароль", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap крестик1 {
             get {
                 object obj = ResourceManager.GetObject("крестик1", resourceCulture);

@@ -72,6 +72,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="Resources\иконка_пароль.png" />
+    <None Include="Resources\иконка_логин.png" />
     <None Include="Resources\форма_авторизации.png" />
     <None Include="Resources\форма3_язык.png" />
     <EmbeddedResource Include="FormAuthorization.resx">
