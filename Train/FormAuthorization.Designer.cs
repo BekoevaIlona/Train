@@ -80,8 +80,10 @@
             this.textBoxPassword.Font = new System.Drawing.Font("a_MachinaOrtoSls", 22.2F, System.Drawing.FontStyle.Bold);
             this.textBoxPassword.Location = new System.Drawing.Point(169, 467);
             this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.PasswordChar = '/';
             this.textBoxPassword.Size = new System.Drawing.Size(316, 51);
             this.textBoxPassword.TabIndex = 6;
+            this.textBoxPassword.UseSystemPasswordChar = true;
             // 
             // textBoxLogin
             // 
@@ -118,7 +120,7 @@
             this.buttonLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(26)))), ((int)(((byte)(12)))));
             this.buttonLogin.Font = new System.Drawing.Font("a_MachinaOrtoSls", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(26)))), ((int)(((byte)(12)))));
-            this.buttonLogin.Location = new System.Drawing.Point(191, 603);
+            this.buttonLogin.Location = new System.Drawing.Point(205, 603);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(161, 59);
             this.buttonLogin.TabIndex = 9;

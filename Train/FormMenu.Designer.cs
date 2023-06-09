@@ -34,8 +34,7 @@
             this.buttonTopic = new System.Windows.Forms.Button();
             this.buttonInstruction = new System.Windows.Forms.Button();
             this.buttonRating = new System.Windows.Forms.Button();
-            this.buttonEntrance = new System.Windows.Forms.Button();
-            this.buttonRentrance = new System.Windows.Forms.Button();
+            this.buttonAuthorization = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonClose
@@ -135,36 +134,21 @@
             this.buttonRating.UseVisualStyleBackColor = false;
             this.buttonRating.Click += new System.EventHandler(this.buttonExit_Click);
             // 
-            // buttonEntrance
+            // buttonAuthorization
             // 
-            this.buttonEntrance.BackColor = System.Drawing.Color.White;
-            this.buttonEntrance.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(26)))), ((int)(((byte)(12)))));
-            this.buttonEntrance.FlatAppearance.BorderSize = 6;
-            this.buttonEntrance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonEntrance.Font = new System.Drawing.Font("a_MachinaOrtoSls", 22.2F, System.Drawing.FontStyle.Bold);
-            this.buttonEntrance.Location = new System.Drawing.Point(619, 220);
-            this.buttonEntrance.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonEntrance.Name = "buttonEntrance";
-            this.buttonEntrance.Size = new System.Drawing.Size(147, 66);
-            this.buttonEntrance.TabIndex = 8;
-            this.buttonEntrance.Text = "вход";
-            this.buttonEntrance.UseVisualStyleBackColor = false;
-            // 
-            // buttonRentrance
-            // 
-            this.buttonRentrance.BackColor = System.Drawing.Color.White;
-            this.buttonRentrance.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(26)))), ((int)(((byte)(12)))));
-            this.buttonRentrance.FlatAppearance.BorderSize = 6;
-            this.buttonRentrance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRentrance.Font = new System.Drawing.Font("a_MachinaOrtoSls", 22.2F, System.Drawing.FontStyle.Bold);
-            this.buttonRentrance.Location = new System.Drawing.Point(772, 220);
-            this.buttonRentrance.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonRentrance.Name = "buttonRentrance";
-            this.buttonRentrance.Size = new System.Drawing.Size(271, 66);
-            this.buttonRentrance.TabIndex = 9;
-            this.buttonRentrance.Text = "регистрация";
-            this.buttonRentrance.UseVisualStyleBackColor = false;
-            this.buttonRentrance.Click += new System.EventHandler(this.buttonRentrance_Click);
+            this.buttonAuthorization.BackColor = System.Drawing.Color.White;
+            this.buttonAuthorization.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(26)))), ((int)(((byte)(12)))));
+            this.buttonAuthorization.FlatAppearance.BorderSize = 6;
+            this.buttonAuthorization.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAuthorization.Font = new System.Drawing.Font("a_MachinaOrtoSls", 22.2F, System.Drawing.FontStyle.Bold);
+            this.buttonAuthorization.Location = new System.Drawing.Point(619, 220);
+            this.buttonAuthorization.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonAuthorization.Name = "buttonAuthorization";
+            this.buttonAuthorization.Size = new System.Drawing.Size(424, 66);
+            this.buttonAuthorization.TabIndex = 9;
+            this.buttonAuthorization.Text = "авторизация";
+            this.buttonAuthorization.UseVisualStyleBackColor = false;
+            this.buttonAuthorization.Click += new System.EventHandler(this.buttonRentrance_Click);
             // 
             // FormMenu
             // 
@@ -173,8 +157,7 @@
             this.BackgroundImage = global::Train.Properties.Resources.форма2_меню2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1556, 763);
-            this.Controls.Add(this.buttonRentrance);
-            this.Controls.Add(this.buttonEntrance);
+            this.Controls.Add(this.buttonAuthorization);
             this.Controls.Add(this.buttonRating);
             this.Controls.Add(this.buttonInstruction);
             this.Controls.Add(this.buttonTopic);
@@ -199,7 +182,6 @@
         private System.Windows.Forms.Button buttonTopic;
         private System.Windows.Forms.Button buttonInstruction;
         private System.Windows.Forms.Button buttonRating;
-        private System.Windows.Forms.Button buttonEntrance;
-        private System.Windows.Forms.Button buttonRentrance;
+        private System.Windows.Forms.Button buttonAuthorization;
     }
 }
