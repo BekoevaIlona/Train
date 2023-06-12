@@ -1,6 +1,6 @@
 ﻿namespace Train
 {
-    partial class FormLnguageSelection
+    partial class FormLanguageSelection
     {
         /// <summary>
         /// Required designer variable.
@@ -47,10 +47,10 @@
             this.buttonMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.buttonMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonMenu.Font = new System.Drawing.Font("Cooper Black", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonMenu.Location = new System.Drawing.Point(348, 11);
-            this.buttonMenu.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonMenu.Location = new System.Drawing.Point(464, 14);
+            this.buttonMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonMenu.Name = "buttonMenu";
-            this.buttonMenu.Size = new System.Drawing.Size(45, 49);
+            this.buttonMenu.Size = new System.Drawing.Size(60, 60);
             this.buttonMenu.TabIndex = 3;
             this.buttonMenu.UseVisualStyleBackColor = true;
             this.buttonMenu.Click += new System.EventHandler(this.buttonMenu_Click);
@@ -66,10 +66,10 @@
             this.buttonClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonClose.Font = new System.Drawing.Font("Cooper Black", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonClose.Location = new System.Drawing.Point(389, 11);
-            this.buttonClose.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonClose.Location = new System.Drawing.Point(519, 14);
+            this.buttonClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonClose.Name = "buttonClose";
-            this.buttonClose.Size = new System.Drawing.Size(45, 49);
+            this.buttonClose.Size = new System.Drawing.Size(60, 60);
             this.buttonClose.TabIndex = 2;
             this.buttonClose.UseVisualStyleBackColor = true;
             this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
@@ -81,10 +81,10 @@
             this.buttonGeorgian.FlatAppearance.BorderSize = 6;
             this.buttonGeorgian.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonGeorgian.Font = new System.Drawing.Font("a_MachinaOrtoSls", 22.2F, System.Drawing.FontStyle.Bold);
-            this.buttonGeorgian.Location = new System.Drawing.Point(97, 443);
-            this.buttonGeorgian.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonGeorgian.Location = new System.Drawing.Point(121, 550);
+            this.buttonGeorgian.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonGeorgian.Name = "buttonGeorgian";
-            this.buttonGeorgian.Size = new System.Drawing.Size(264, 54);
+            this.buttonGeorgian.Size = new System.Drawing.Size(352, 66);
             this.buttonGeorgian.TabIndex = 8;
             this.buttonGeorgian.Text = "Грузинский язык";
             this.buttonGeorgian.UseVisualStyleBackColor = false;
@@ -96,10 +96,10 @@
             this.buttonArmenian.FlatAppearance.BorderSize = 6;
             this.buttonArmenian.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonArmenian.Font = new System.Drawing.Font("a_MachinaOrtoSls", 22.2F, System.Drawing.FontStyle.Bold);
-            this.buttonArmenian.Location = new System.Drawing.Point(97, 366);
-            this.buttonArmenian.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonArmenian.Location = new System.Drawing.Point(121, 455);
+            this.buttonArmenian.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonArmenian.Name = "buttonArmenian";
-            this.buttonArmenian.Size = new System.Drawing.Size(264, 54);
+            this.buttonArmenian.Size = new System.Drawing.Size(352, 66);
             this.buttonArmenian.TabIndex = 7;
             this.buttonArmenian.Text = "Армянский язык";
             this.buttonArmenian.UseVisualStyleBackColor = false;
@@ -111,10 +111,10 @@
             this.buttonOssetian.FlatAppearance.BorderSize = 6;
             this.buttonOssetian.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonOssetian.Font = new System.Drawing.Font("a_MachinaOrtoSls", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonOssetian.Location = new System.Drawing.Point(97, 289);
-            this.buttonOssetian.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonOssetian.Location = new System.Drawing.Point(121, 361);
+            this.buttonOssetian.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonOssetian.Name = "buttonOssetian";
-            this.buttonOssetian.Size = new System.Drawing.Size(264, 54);
+            this.buttonOssetian.Size = new System.Drawing.Size(352, 66);
             this.buttonOssetian.TabIndex = 6;
             this.buttonOssetian.Text = "Осетинский язык";
             this.buttonOssetian.UseVisualStyleBackColor = false;
@@ -127,28 +127,31 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("a_MachinaOrtoSls", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(166, 586);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Location = new System.Drawing.Point(213, 713);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(127, 54);
+            this.button1.Size = new System.Drawing.Size(169, 66);
             this.button1.TabIndex = 9;
             this.button1.Text = "готово";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // FormLnguageSelection
+            // FormLanguageSelection
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Train.Properties.Resources.форма3_язык2;
-            this.ClientSize = new System.Drawing.Size(445, 728);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(593, 896);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonGeorgian);
             this.Controls.Add(this.buttonArmenian);
             this.Controls.Add(this.buttonOssetian);
             this.Controls.Add(this.buttonMenu);
             this.Controls.Add(this.buttonClose);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FormLnguageSelection";
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "FormLanguageSelection";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormLnguageSelection";
             this.Load += new System.EventHandler(this.FormLnguageSelection_Load);

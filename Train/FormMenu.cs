@@ -13,7 +13,8 @@ namespace Train
     public partial class FormMenu : Form
     {
         FormInstructions instructions = new FormInstructions();
-        FormLnguageSelection lnguageSelection = new FormLnguageSelection();
+        FormLanguageSelection languageSelection = new FormLanguageSelection();
+        FormAuthorization authorization = new FormAuthorization();
         public FormMenu()
         {
             InitializeComponent();
@@ -43,7 +44,23 @@ namespace Train
         private void buttonLanguage_Click(object sender, EventArgs e)
         {
             this.Hide();
-            lnguageSelection.ShowDialog();
+            languageSelection.ShowDialog();
+        }
+
+        private void buttonRentrance_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            authorization.ShowDialog();
+        }
+
+        private void buttonPlay_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonTopic_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

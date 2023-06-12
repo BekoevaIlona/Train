@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace Train
 {
-    public partial class FormLnguageSelection : Form
+    public partial class FormLanguageSelection : Form
     {
         static FormMenu formMenu = new FormMenu();
-        public FormLnguageSelection()
+        public FormLanguageSelection()
         {
             InitializeComponent();
         }
