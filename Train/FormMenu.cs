@@ -15,6 +15,7 @@ namespace Train
         FormInstructions instructions = new FormInstructions();
         FormLanguageSelection languageSelection = new FormLanguageSelection();
         FormAuthorization authorization = new FormAuthorization();
+        FormLeaderboard leaderboard = new FormLeaderboard();
         public FormMenu()
         {
             InitializeComponent();
@@ -38,7 +39,8 @@ namespace Train
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Hide();
+            leaderboard.ShowDialog();
         }
 
         private void buttonLanguage_Click(object sender, EventArgs e)
