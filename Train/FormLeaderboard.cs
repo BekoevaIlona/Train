@@ -71,14 +71,20 @@ namespace Train
             // Выводим результаты
             listBoxLeaderboard.Items.Clear();
 
+            int i = 1; 
             foreach (Player player in players)
             {
-                listBoxLeaderboard.Items.Add(player.Name + " - " + player.Score);
+                string listItem = i.ToString() + ". " + player.Name + " - " + player.Score; 
+                listBoxLeaderboard.Items.Add(listItem); 
+                i++; 
             }
-        
-    }
 
-        
+        }
+
+        private void listBoxLeaderboard_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

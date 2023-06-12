@@ -81,6 +81,7 @@
             this.listBoxLeaderboard.Name = "listBoxLeaderboard";
             this.listBoxLeaderboard.Size = new System.Drawing.Size(296, 430);
             this.listBoxLeaderboard.TabIndex = 8;
+            this.listBoxLeaderboard.SelectedIndexChanged += new System.EventHandler(this.listBoxLeaderboard_SelectedIndexChanged);
             // 
             // FormLeaderboard
             // 
