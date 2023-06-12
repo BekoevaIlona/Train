@@ -52,5 +52,15 @@ namespace Train
             this.Hide();
             authorization.ShowDialog();
         }
+
+        private void buttonPlay_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonTopic_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
