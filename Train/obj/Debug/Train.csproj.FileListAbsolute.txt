@@ -74,4 +74,5 @@ C:\Users\Илона\OneDrive\Рабочий стол\Программирова�
 C:\Users\Илона\OneDrive\Рабочий стол\Программирование\Train 3\Train\obj\Debug\Train.csproj.CoreCompileInputs.cache
 C:\Users\Илона\OneDrive\Рабочий стол\Программирование\Train 3\Train\obj\Debug\Train.exe
 C:\Users\Илона\OneDrive\Рабочий стол\Программирование\Train 3\Train\obj\Debug\Train.pdb
-C:\Users\Илона\OneDrive\Рабочий стол\Программирование\Train 3\Train\obj\Debug\Train.FormRegistration.resources
+C:\Users\Илона\OneDrive\Рабочий стол\Программирование\Train 3\Train\obj\Debug\Train.FormTopic.resources
+C:\Users\Илона\OneDrive\Рабочий стол\Программирование\Train 3\Train\obj\Debug\Train.FormGame.resources

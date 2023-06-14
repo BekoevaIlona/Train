@@ -11,74 +11,12 @@ using System.Windows.Forms;
 
 namespace Train
 {
-    //public partial class FormAuthorization : Form
-    //{
-    //    static FormMenu formMenu = new FormMenu();
-    //    private PlayerData playerData;
-    //    public FormAuthorization()
-    //    {
-    //        InitializeComponent();
-
-    //    }
-    //    private void buttonClose_Click(object sender, EventArgs e)
-    //    {
-    //        Application.Exit();
-    //    }
-
-    //    private void buttonMenu_Click(object sender, EventArgs e)
-    //    {
-    //        this.Hide();
-    //        formMenu.ShowDialog();
-    //    }
-    //    private void buttonLogin_Click(object sender, EventArgs e)
-    //    {
-    //        // проверяем, что поля логина и пароля не пустые
-    //        if (string.IsNullOrWhiteSpace(textBoxLogin.Text) || string.IsNullOrWhiteSpace(textBoxPassword.Text))
-    //        {
-    //            MessageBox.Show("Пожалуйста, введите логин и пароль");
-    //            return;
-    //        }
-
-    //        // создаем экземпляр класса PlayerData и заполняем его поля
-    //        PlayerData playerData = new PlayerData
-    //        {
-    //            Login = textBoxLogin.Text,
-    //            Password = textBoxPassword.Text,
-    //            Language = "",
-    //            Topic = "",
-    //            Score = 0
-    //        };
-
-    //        // переходим на форму выбора языка
-    //        FormLanguageSelection languageForm = new FormLanguageSelection(playerData);
-    //        languageForm.Show();
-
-    //        // скрываем текущую форму
-    //        this.Hide();
-    //    }
-
-    //    private void buttonRegister_Click(object sender, EventArgs e)
-    //    {
-    //        // переходим на форму регистрации
-    //        FormRegistration registrationForm = new FormRegistration();
-    //        registrationForm.Show();
-
-    //        // скрываем текущую форму
-    //        this.Hide();
-    //    }
-
-
-    //}
     public partial class FormAuthorization : Form
     {
-        public PlayerData playerData;
         static FormMenu formMenu = new FormMenu();
         public FormAuthorization()
         {
             InitializeComponent();
-
-            // создаем экземпляр класса PlayerData
-            playerData = new PlayerData();
         }
         private void buttonClose_Click(object sender, EventArgs e)
         {
@@ -90,48 +28,73 @@ namespace Train
             this.Hide();
             formMenu.ShowDialog();
         }
+
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            // проверяем, что поля логина и пароля не пустые
-            if (string.IsNullOrWhiteSpace(textBoxLogin.Text) || string.IsNullOrWhiteSpace(textBoxPassword.Text))
+            string username = textBoxLogin.Text;
+            string password = textBoxPassword.Text;
+
+            // Проверяем, чтобы поля логина и пароля были заполнены
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
-                MessageBox.Show("Пожалуйста, введите логин и пароль");
+                MessageBox.Show("Введите логин и пароль");
                 return;
             }
 
-            // проверяем, что пользователь уже зарегистрирован
-            if (!playerData.IsRegistered(textBoxLogin.Text))
+            // Проверяем, что пользователь с таким логином существует
+            string userFile = $"{Directory.GetCurrentDirectory()}\\users\\{username}.txt";
+            if (!File.Exists(userFile))
             {
-                MessageBox.Show("Пользователь с таким логином не зарегистрирован");
+                MessageBox.Show("Пользователь с таким логином не найден");
                 return;
             }
 
-            // проверяем, что пароль введен правильно
-            if (!playerData.CheckPassword(textBoxLogin.Text, textBoxPassword.Text))
+            // Сверяем пароли
+            string[] data = File.ReadAllText(userFile).Split(',');
+            if (data[1] != password)
             {
-                MessageBox.Show("Неправильный пароль");
+                MessageBox.Show("Неверный пароль");
                 return;
             }
 
-            // сохраняем логин игрока
-            playerData.Login = textBoxLogin.Text;
-
-            // переходим на форму выбора языка
-            FormLanguageSelection languageForm = new FormLanguageSelection(playerData);
+            // Переходим на следующую форму
+            FormLanguageSelection languageForm = new FormLanguageSelection(username);
             languageForm.Show();
-
-            // скрываем текущую форму
             this.Hide();
         }
 
         private void buttonRegister_Click(object sender, EventArgs e)
         {
-            // переходим на форму регистрации
-            FormRegistration registrationForm = new FormRegistration(playerData);
-            registrationForm.Show();
+                string username = textBoxLogin.Text;
+                string password = textBoxPassword.Text;
 
-            // скрываем текущую форму
-            this.Hide();
+                // Проверяем, чтобы поля логина и пароля были заполнены
+                if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+                {
+                    MessageBox.Show("Введите логин и пароль");
+                    return;
+                }
+
+                // Записываем логин и пароль в файл
+                string userData = $"{username},{password}";
+                string usersDirectory = $"{Directory.GetCurrentDirectory()}\\users";
+                if (!Directory.Exists(usersDirectory))
+                {
+                    Directory.CreateDirectory(usersDirectory);
+                }
+                string userFile = $"{usersDirectory}\\{username}.txt";
+                File.WriteAllText(userFile, userData);
+
+                // Переходим на следующую форму
+                FormLanguageSelection languageForm = new FormLanguageSelection(username);
+                languageForm.Show();
+                this.Hide();
+            
+        }
+
+        private void FormAuthorization_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,18 +13,26 @@ namespace Train
 {
     public partial class FormLanguageSelection : Form
     {
-        private PlayerData playerData;
+        private string username;
         static FormMenu formMenu = new FormMenu();
-        public FormLanguageSelection(PlayerData playerData)
+        private PlayerData playerData;
+
+        public FormLanguageSelection(string username)
         {
             InitializeComponent();
-            this.playerData = playerData;
+            this.username = username;
+            //playerData = new PlayerData(username, "", "");
+            //playerData.LoadData();
+        }
+        public FormLanguageSelection()
+        {
+           
         }
 
         private void buttonClose_Click(object sender, EventArgs e)
         {
+            playerData.SaveData();
             Application.Exit();
-            
         }
 
         private void buttonMenu_Click(object sender, EventArgs e)
@@ -31,49 +40,35 @@ namespace Train
             this.Hide();
             formMenu.ShowDialog();
         }
-
-        private void FormLnguageSelection_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonOssetian_Click(object sender, EventArgs e)
         {
-            // выбран язык осетинский
-            playerData.Language = "осетинский";
-
-            // переходим на форму выбора тематики
-            //TopicForm topicForm = new TopicForm(playerData);
-            //topicForm.Show();
-
-            // скрываем текущую форму
+            SaveLanguageSelection("ossetian");
+            FormTopic topicForm = new FormTopic(username, "ossetian");
+            topicForm.Show();
             this.Hide();
         }
 
         private void buttonArmenian_Click(object sender, EventArgs e)
         {
-            // выбран язык армянский
-            playerData.Language = "армянский";
-
-            // переходим на форму выбора тематики
-            //TopicForm topicForm = new TopicForm(playerData);
-            //topicForm.Show();
-
-            // скрываем текущую форму
+            SaveLanguageSelection("armenian");
+            FormTopic topicForm = new FormTopic(username, "armenian");
+            topicForm.Show();
             this.Hide();
         }
 
         private void buttonGeorgian_Click(object sender, EventArgs e)
         {
-            // выбран язык грузинский
-            playerData.Language = "грузинский";
-
-            // переходим на форму выбора тематики
-            //TopicForm topicForm = new TopicForm(playerData);
-            //topicForm.Show();
-
-            // скрываем текущую форму
+            SaveLanguageSelection("georgian");
+            FormTopic topicForm = new FormTopic(username, "georgian");
+            topicForm.Show();
             this.Hide();
+        }
+
+        private void SaveLanguageSelection(string language)
+        {
+            string usersDirectory = $"{Directory.GetCurrentDirectory()}\\users";
+            string userFile = $"{usersDirectory}\\{username}.txt";
+            File.AppendAllText(userFile, $",{language}");
         }
     }
 }

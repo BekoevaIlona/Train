@@ -46,11 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormRegistration.cs">
+    <Compile Include="FormGame.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormRegistration.Designer.cs">
-      <DependentUpon>FormRegistration.cs</DependentUpon>
+    <Compile Include="FormGame.Designer.cs">
+      <DependentUpon>FormGame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTopic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTopic.Designer.cs">
+      <DependentUpon>FormTopic.cs</DependentUpon>
     </Compile>
     <Compile Include="PlayerData.cs" />
     <Compile Include="FormAuthorization.cs">
@@ -94,6 +100,9 @@
     <EmbeddedResource Include="FormAuthorization.resx">
       <DependentUpon>FormAuthorization.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormGame.resx">
+      <DependentUpon>FormGame.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormInstructions.resx">
       <DependentUpon>FormInstructions.cs</DependentUpon>
     </EmbeddedResource>
@@ -106,8 +115,8 @@
     <EmbeddedResource Include="FormMenu.resx">
       <DependentUpon>FormMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormRegistration.resx">
-      <DependentUpon>FormRegistration.cs</DependentUpon>
+    <EmbeddedResource Include="FormTopic.resx">
+      <DependentUpon>FormTopic.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

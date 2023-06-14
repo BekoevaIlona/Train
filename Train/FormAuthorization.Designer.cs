@@ -197,6 +197,7 @@
             this.Name = "FormAuthorization";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormAuthorization";
+            this.Load += new System.EventHandler(this.FormAuthorization_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIconLogin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIconPassword)).EndInit();
             this.ResumeLayout(false);

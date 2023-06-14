@@ -157,7 +157,6 @@
             this.Name = "FormLanguageSelection";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormLnguageSelection";
-            this.Load += new System.EventHandler(this.FormLnguageSelection_Load);
             this.ResumeLayout(false);
 
         }

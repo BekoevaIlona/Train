@@ -11,98 +11,68 @@ namespace Train
 {
     public class PlayerData
     {
-        public string Login { get; set; }
-        private string Password { get; set; }
-        public string Language { get; set; }
-        public string Topic { get; set; }
-        public int Score { get; set; }
+        private string username;
+        private string language;
+        private string topic;
+        private int points;
 
-        public PlayerData()
+        public PlayerData(string username, string language, string topic)
         {
-            Score = 0;
+            this.username = username;
+            this.language = language;
+            this.topic = topic;
+            this.points = 0;
         }
 
-        public bool IsRegistered(string login)
+        public void LoadData()
         {
-            // проверяем, что файл с данными игрока существует в папке пользователей
-            string filePath = GetUserFilePath(login);
-            return File.Exists(filePath);
+            string usersDirectory = $"{Directory.GetCurrentDirectory()}\\users";
+            string userFile = $"{usersDirectory}\\{username}.txt";
+            string[] data = File.ReadAllText(userFile).Split(',');
+            language = data[1];
+            topic = data[2];
+            if (int.TryParse(data[3], out int pointsValue))
+            {
+                points = pointsValue;
+            }
+            else
+            {
+                // Обработка ошибки
+                Console.WriteLine($"Недопустимое значение баллов: {data[3]}");
+                points = 0; // Установка значения по умолчанию
+            }
+
         }
 
-        public bool Register(string login, string password)
+        public void SaveData()
         {
-            // проверяем, что пользователь с таким логином еще не зарегистрирован
-            if (IsRegistered(login))
-            {
-                return false;
-            }
-
-            // сохраняем логин и хэш пароля в файле с данными игрока
-            string filePath = GetUserFilePath(login);
-            using (StreamWriter writer = new StreamWriter(filePath))
-            {
-                writer.WriteLine(login);
-                writer.WriteLine(HashPassword(password));
-            }
-
-            return true;
+            string usersDirectory = $"{Directory.GetCurrentDirectory()}\\users";
+            string userFile = $"{usersDirectory}\\{username}.txt";
+            string userData = $"{username},{language},{topic},{points}";
+            File.AppendAllText(userFile, userData + ",");
         }
 
-        public bool CheckPassword(string login, string password)
+        public string Username
         {
-            // проверяем, что файл с данными игрока существует в папке пользователей
-            string filePath = GetUserFilePath(login);
-            if (!File.Exists(filePath))
-            {
-                return false;
-            }
-
-            // считываем хэш пароля из файла и сравниваем с введенным паролем
-            using (StreamReader reader = new StreamReader(filePath))
-            {
-                reader.ReadLine(); // пропускаем логин
-                string hashedPassword = reader.ReadLine();
-                return HashPassword(password) == hashedPassword;
-            }
+            get { return username; }
         }
 
-        public void Save()
+        public string Language
         {
-            // создаем папку пользователей, если ее нет
-            string usersDirectory = Path.Combine(Application.StartupPath, "users");
-            if (!Directory.Exists(usersDirectory))
-            {
-                Directory.CreateDirectory(usersDirectory);
-            }
-
-            // сохраняем данные игрока в txt файле в папке пользователей
-            string filePath = GetUserFilePath(Login);
-            using (StreamWriter writer = new StreamWriter(filePath))
-            {
-                writer.WriteLine(Login);
-                writer.WriteLine(HashPassword(Password));
-                writer.WriteLine(Language);
-                writer.WriteLine(Topic);
-                writer.WriteLine(Score);
-            }
+            get { return language; }
+            set { language = value; }
         }
 
-        private string GetUserFilePath(string login)
+        public string Topic
         {
-            // формируем путь к файлу с данными игрока
-            string fileName = login + ".txt";
-            return Path.Combine(Application.StartupPath, "users", fileName);
+            get { return topic; }
+            set { topic = value; }
         }
 
-        private string HashPassword(string password)
+        public int Points
         {
-            // хэшируем пароль с помощью SHA256
-            byte[] bytes = Encoding.UTF8.GetBytes(password);
-            using (SHA256Managed sha256 = new SHA256Managed())
-            {
-                byte[] hash = sha256.ComputeHash(bytes);
-                return Convert.ToBase64String(hash);
-            }
+            get { return points; }
+            set { points = value; }
         }
     }
 }

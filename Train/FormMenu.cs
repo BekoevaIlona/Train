@@ -12,7 +12,6 @@ namespace Train
 {
     public partial class FormMenu : Form
     {
-        private PlayerData playerData;
         FormInstructions instructions = new FormInstructions();
         FormAuthorization authorization = new FormAuthorization();
         FormLeaderboard leaderboard = new FormLeaderboard();
@@ -21,11 +20,6 @@ namespace Train
             InitializeComponent();
         }
         
-        private void FormMenu_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonClose_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -46,7 +40,7 @@ namespace Train
         private void buttonLanguage_Click(object sender, EventArgs e)
         {
             this.Hide();
-            FormLanguageSelection languageSelection = new FormLanguageSelection(playerData);
+            FormLanguageSelection languageSelection = new FormLanguageSelection();
             languageSelection.ShowDialog();
         }
 
