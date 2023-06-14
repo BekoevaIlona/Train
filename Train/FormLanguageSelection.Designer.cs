@@ -88,6 +88,7 @@
             this.buttonGeorgian.TabIndex = 8;
             this.buttonGeorgian.Text = "Грузинский язык";
             this.buttonGeorgian.UseVisualStyleBackColor = false;
+            this.buttonGeorgian.Click += new System.EventHandler(this.buttonGeorgian_Click);
             // 
             // buttonArmenian
             // 
@@ -103,6 +104,7 @@
             this.buttonArmenian.TabIndex = 7;
             this.buttonArmenian.Text = "Армянский язык";
             this.buttonArmenian.UseVisualStyleBackColor = false;
+            this.buttonArmenian.Click += new System.EventHandler(this.buttonArmenian_Click);
             // 
             // buttonOssetian
             // 
@@ -118,6 +120,7 @@
             this.buttonOssetian.TabIndex = 6;
             this.buttonOssetian.Text = "Осетинский язык";
             this.buttonOssetian.UseVisualStyleBackColor = false;
+            this.buttonOssetian.Click += new System.EventHandler(this.buttonOssetian_Click);
             // 
             // button1
             // 
@@ -154,7 +157,6 @@
             this.Name = "FormLanguageSelection";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormLnguageSelection";
-            this.Load += new System.EventHandler(this.FormLnguageSelection_Load);
             this.ResumeLayout(false);
 
         }
