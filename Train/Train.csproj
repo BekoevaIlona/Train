@@ -64,6 +64,13 @@
     <Compile Include="FormTopic.Designer.cs">
       <DependentUpon>FormTopic.cs</DependentUpon>
     </Compile>
+    <Compile Include="Level.cs" />
+    <Compile Include="ListCards.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ListWagons.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="PlayerData.cs" />
     <Compile Include="FormAuthorization.cs">
       <SubType>Form</SubType>

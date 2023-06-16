@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Train.Train;
 
 namespace Train
 {
     public partial class FormGame : Form
     {
         //private PlayerData playerData;
+        public static Card MovedCard = null;
 
         public FormGame(string username, string language, string topic)
         {
