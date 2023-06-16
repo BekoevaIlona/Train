@@ -34,6 +34,7 @@
             // 
             // buttonMenu
             // 
+            this.buttonMenu.BackColor = System.Drawing.Color.White;
             this.buttonMenu.BackgroundImage = global::Train.Properties.Resources.IconMenu;
             this.buttonMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonMenu.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -43,11 +44,11 @@
             this.buttonMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.buttonMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonMenu.Font = new System.Drawing.Font("Cooper Black", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonMenu.Location = new System.Drawing.Point(674, 12);
+            this.buttonMenu.Location = new System.Drawing.Point(1407, 7);
             this.buttonMenu.Name = "buttonMenu";
-            this.buttonMenu.Size = new System.Drawing.Size(60, 60);
+            this.buttonMenu.Size = new System.Drawing.Size(40, 40);
             this.buttonMenu.TabIndex = 3;
-            this.buttonMenu.UseVisualStyleBackColor = true;
+            this.buttonMenu.UseVisualStyleBackColor = false;
             this.buttonMenu.Click += new System.EventHandler(this.buttonMenu_Click);
             // 
             // buttonClose
@@ -61,9 +62,9 @@
             this.buttonClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonClose.Font = new System.Drawing.Font("Cooper Black", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonClose.Location = new System.Drawing.Point(728, 12);
+            this.buttonClose.Location = new System.Drawing.Point(1453, 7);
             this.buttonClose.Name = "buttonClose";
-            this.buttonClose.Size = new System.Drawing.Size(60, 60);
+            this.buttonClose.Size = new System.Drawing.Size(40, 40);
             this.buttonClose.TabIndex = 2;
             this.buttonClose.UseVisualStyleBackColor = true;
             this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
@@ -72,11 +73,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = global::Train.Properties.Resources.k2;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1500, 900);
             this.Controls.Add(this.buttonMenu);
             this.Controls.Add(this.buttonClose);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormGame";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormGame";
+            this.Load += new System.EventHandler(this.FormGame_Load);
             this.ResumeLayout(false);
 
         }

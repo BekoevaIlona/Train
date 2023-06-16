@@ -123,6 +123,9 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Resources\k.png" />
+    <None Include="Resources\k1.png" />
+    <None Include="Resources\k2.png" />
     <Content Include="Resources\ofont.ru_Bowler.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

@@ -79,6 +79,7 @@
             this.buttonMenu.Size = new System.Drawing.Size(60, 60);
             this.buttonMenu.TabIndex = 4;
             this.buttonMenu.UseVisualStyleBackColor = true;
+            this.buttonMenu.Click += new System.EventHandler(this.buttonMenu_Click);
             // 
             // buttonClose
             // 
@@ -96,6 +97,7 @@
             this.buttonClose.Size = new System.Drawing.Size(60, 60);
             this.buttonClose.TabIndex = 3;
             this.buttonClose.UseVisualStyleBackColor = true;
+            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
             // 
             // FormTopic
             // 

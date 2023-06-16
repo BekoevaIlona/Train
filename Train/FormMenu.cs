@@ -14,7 +14,9 @@ namespace Train
     {
         FormInstructions instructions = new FormInstructions();
         FormAuthorization authorization = new FormAuthorization();
+        FormLanguageSelection languageSelection = new FormLanguageSelection();
         FormLeaderboard leaderboard = new FormLeaderboard();
+        FormGame formGame = new FormGame();
         public FormMenu()
         {
             InitializeComponent();
@@ -24,7 +26,11 @@ namespace Train
         {
             Application.Exit();
         }
-
+        private void buttonPlay_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            formGame.ShowDialog();
+        }
         private void buttonInstruction_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -40,7 +46,6 @@ namespace Train
         private void buttonLanguage_Click(object sender, EventArgs e)
         {
             this.Hide();
-            FormLanguageSelection languageSelection = new FormLanguageSelection();
             languageSelection.ShowDialog();
         }
 
@@ -50,10 +55,7 @@ namespace Train
             authorization.ShowDialog();
         }
 
-        private void buttonPlay_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void buttonTopic_Click(object sender, EventArgs e)
         {
