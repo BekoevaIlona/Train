@@ -30,6 +30,7 @@
         {
             this.buttonMenu = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
+            this.labelRules = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonMenu
@@ -69,6 +70,19 @@
             this.buttonClose.UseVisualStyleBackColor = true;
             this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
             // 
+            // labelRules
+            // 
+            this.labelRules.AutoSize = true;
+            this.labelRules.BackColor = System.Drawing.Color.Transparent;
+            this.labelRules.Font = new System.Drawing.Font("a_MachinaOrtoSls", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelRules.ForeColor = System.Drawing.Color.White;
+            this.labelRules.Location = new System.Drawing.Point(247, 63);
+            this.labelRules.Name = "labelRules";
+            this.labelRules.Size = new System.Drawing.Size(55, 20);
+            this.labelRules.TabIndex = 6;
+            this.labelRules.Text = "label1";
+            this.labelRules.Click += new System.EventHandler(this.labelRules_Click);
+            // 
             // FormGameTeach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -76,6 +90,7 @@
             this.BackgroundImage = global::Train.Properties.Resources.formGameTeach;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1482, 853);
+            this.Controls.Add(this.labelRules);
             this.Controls.Add(this.buttonMenu);
             this.Controls.Add(this.buttonClose);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -83,6 +98,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormGameTeach";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -90,5 +106,6 @@
 
         private System.Windows.Forms.Button buttonMenu;
         private System.Windows.Forms.Button buttonClose;
+        private System.Windows.Forms.Label labelRules;
     }
 }
