@@ -49,7 +49,8 @@ namespace Train
             string usersDirectory = $"{Directory.GetCurrentDirectory()}\\users";
             string userFile = $"{usersDirectory}\\{username}.txt";
             string userData = $"{username},{language},{topic},{points}";
-            File.AppendAllText(userFile, userData + ",");
+            File.WriteAllText(userFile, userData);
+
         }
 
         public string Username

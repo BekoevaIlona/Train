@@ -52,6 +52,12 @@
     <Compile Include="FormGame.Designer.cs">
       <DependentUpon>FormGame.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormGameTeach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGameTeach.Designer.cs">
+      <DependentUpon>FormGameTeach.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormTopic.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +109,9 @@
     <EmbeddedResource Include="FormGame.resx">
       <DependentUpon>FormGame.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormGameTeach.resx">
+      <DependentUpon>FormGameTeach.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormInstructions.resx">
       <DependentUpon>FormInstructions.cs</DependentUpon>
     </EmbeddedResource>
@@ -123,6 +132,10 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Resources\k.png" />
+    <None Include="Resources\k1.png" />
+    <None Include="Resources\k2.png" />
+    <None Include="Resources\formGameTeach.png" />
     <Content Include="Resources\ofont.ru_Bowler.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

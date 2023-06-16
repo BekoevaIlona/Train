@@ -51,16 +51,21 @@ namespace Train
 
             // Сверяем пароли
             string[] data = File.ReadAllText(userFile).Split(',');
-            if (data[1] != password)
+            if (data.Length >= 2 && data[1] == password)
+            {
+                // Переходим на следующую форму
+                FormLanguageSelection languageForm = new FormLanguageSelection(username);
+                languageForm.Show();
+                this.Hide();
+            }
+            else
             {
                 MessageBox.Show("Неверный пароль");
                 return;
             }
 
-            // Переходим на следующую форму
-            FormLanguageSelection languageForm = new FormLanguageSelection(username);
-            languageForm.Show();
-            this.Hide();
+
+            
         }
 
         private void buttonRegister_Click(object sender, EventArgs e)

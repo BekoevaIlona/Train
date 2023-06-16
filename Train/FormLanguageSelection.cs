@@ -26,7 +26,7 @@ namespace Train
         }
         public FormLanguageSelection()
         {
-           
+            InitializeComponent();
         }
 
         private void buttonClose_Click(object sender, EventArgs e)
@@ -62,13 +62,35 @@ namespace Train
             FormTopic topicForm = new FormTopic(username, "georgian");
             topicForm.Show();
             this.Hide();
+
         }
 
         private void SaveLanguageSelection(string language)
         {
+            //string usersDirectory = $"{Directory.GetCurrentDirectory()}\\users";
+            //string userFile = $"{usersDirectory}\\{username}.txt";
+            //File.AppendAllText(userFile, $",{language}");
             string usersDirectory = $"{Directory.GetCurrentDirectory()}\\users";
             string userFile = $"{usersDirectory}\\{username}.txt";
-            File.AppendAllText(userFile, $",{language}");
+
+            // Прочитать содержимое файла пользователя
+            string fileContents = File.Exists(userFile) ? File.ReadAllText(userFile) : "";
+
+            // Проверить, содержит ли файл язык
+            if (fileContents.Contains(language))
+            {
+                // Заменить существующий язык на новый
+                fileContents = fileContents.Replace(language, $"{language}");
+            }
+            else
+            {
+                // Добавить новый язык в файл
+                fileContents += $",{language}";
+            }
+
+            // Записать обновленное содержимое обратно в файл
+            File.WriteAllText(userFile, fileContents);
+
         }
     }
 }
