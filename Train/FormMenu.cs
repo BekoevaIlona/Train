@@ -16,7 +16,7 @@ namespace Train
         FormAuthorization authorization = new FormAuthorization();
         FormLanguageSelection languageSelection = new FormLanguageSelection();
         FormLeaderboard leaderboard = new FormLeaderboard();
-        FormGame formGame = new FormGame();
+        FormGameTeach formGameTeach = new FormGameTeach();
         public FormMenu()
         {
             InitializeComponent();
@@ -29,7 +29,7 @@ namespace Train
         private void buttonPlay_Click(object sender, EventArgs e)
         {
             this.Hide();
-            formGame.ShowDialog();
+            formGameTeach.ShowDialog();
         }
         private void buttonInstruction_Click(object sender, EventArgs e)
         {

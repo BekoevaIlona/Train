@@ -63,6 +63,16 @@ namespace Train.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap formGameTeach {
+            get {
+                object obj = ResourceManager.GetObject("formGameTeach", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap IconMenu {
             get {
                 object obj = ResourceManager.GetObject("IconMenu", resourceCulture);
