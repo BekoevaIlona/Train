@@ -16,7 +16,7 @@ namespace Train
         //private PlayerData playerData;
         public static Card MovedCard = null;
 
-        public FormGame(string username, string language, string topic)
+        public FormGame(string username)
         {
             InitializeComponent();
             //playerData = new PlayerData(username, language, topic);

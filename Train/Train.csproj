@@ -143,6 +143,7 @@
     <None Include="Resources\k1.png" />
     <None Include="Resources\k2.png" />
     <None Include="Resources\formGameTeach.png" />
+    <None Include="Resources\FormTopic.png" />
     <Content Include="Resources\ofont.ru_Bowler.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

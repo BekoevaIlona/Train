@@ -1,1 +1,1 @@
-alina,14,georgian,fruits_vegetables,0
+alina,14,georgian,fruits_vegetables,10

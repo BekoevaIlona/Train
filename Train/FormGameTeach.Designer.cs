@@ -31,6 +31,7 @@
             this.buttonMenu = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
             this.labelRules = new System.Windows.Forms.Label();
+            this.panelCards = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // buttonMenu
@@ -83,6 +84,14 @@
             this.labelRules.Text = "label1";
             this.labelRules.Click += new System.EventHandler(this.labelRules_Click);
             // 
+            // panelCards
+            // 
+            this.panelCards.BackColor = System.Drawing.Color.White;
+            this.panelCards.Location = new System.Drawing.Point(814, 81);
+            this.panelCards.Name = "panelCards";
+            this.panelCards.Size = new System.Drawing.Size(651, 747);
+            this.panelCards.TabIndex = 7;
+            // 
             // FormGameTeach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -90,6 +99,7 @@
             this.BackgroundImage = global::Train.Properties.Resources.formGameTeach;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1482, 853);
+            this.Controls.Add(this.panelCards);
             this.Controls.Add(this.labelRules);
             this.Controls.Add(this.buttonMenu);
             this.Controls.Add(this.buttonClose);
@@ -97,6 +107,7 @@
             this.Name = "FormGameTeach";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormGameTeach";
+            this.Load += new System.EventHandler(this.FormGameTeach_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -107,5 +118,6 @@
         private System.Windows.Forms.Button buttonMenu;
         private System.Windows.Forms.Button buttonClose;
         private System.Windows.Forms.Label labelRules;
+        private System.Windows.Forms.Panel panelCards;
     }
 }

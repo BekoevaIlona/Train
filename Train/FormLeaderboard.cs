@@ -53,14 +53,19 @@ namespace Train
             {
                 string[] lines = File.ReadAllLines(file);
 
-                if (lines.Length >= 3)
+                foreach (string line in lines)
                 {
-                    string name = lines[0];
-                    int score;
+                    string[] userData = line.Split(',');
 
-                    if (int.TryParse(lines[2], out score))
+                    if (userData.Length >= 5)
                     {
-                        players.Add(new Player(name, score));
+                        string name = userData[0];
+                        int score;
+
+                        if (int.TryParse(userData[4], out score))
+                        {
+                            players.Add(new Player(name, score));
+                        }
                     }
                 }
             }
@@ -71,14 +76,13 @@ namespace Train
             // Выводим результаты
             listBoxLeaderboard.Items.Clear();
 
-            int i = 1; 
+            int i = 1;
             foreach (Player player in players)
             {
-                string listItem = i.ToString() + ". " + player.Name + " - " + player.Score; 
-                listBoxLeaderboard.Items.Add(listItem); 
-                i++; 
+                string listItem = i.ToString() + ". " + player.Name + " - " + player.Score;
+                listBoxLeaderboard.Items.Add(listItem);
+                i++;
             }
-
         }
 
         private void listBoxLeaderboard_SelectedIndexChanged(object sender, EventArgs e)

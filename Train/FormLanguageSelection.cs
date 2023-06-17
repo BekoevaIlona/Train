@@ -31,7 +31,6 @@ namespace Train
 
         private void buttonClose_Click(object sender, EventArgs e)
         {
-            playerData.SaveData();
             Application.Exit();
         }
 
@@ -43,44 +42,45 @@ namespace Train
         private void buttonOssetian_Click(object sender, EventArgs e)
         {
             SaveLanguageSelection("ossetian");
-            FormTopic topicForm = new FormTopic(username, "ossetian");
-            topicForm.Show();
+            FormMenu formMenu = new FormMenu(username);
+            formMenu.Show();
+            MessageBox.Show("Теперь вы можете выбрать тематику для обучения!");
             this.Hide();
         }
 
         private void buttonArmenian_Click(object sender, EventArgs e)
         {
             SaveLanguageSelection("armenian");
-            FormTopic topicForm = new FormTopic(username, "armenian");
-            topicForm.Show();
+            FormMenu formMenu = new FormMenu(username);
+            formMenu.Show();
+            MessageBox.Show("Теперь вы можете выбрать тематику для обучения!");
             this.Hide();
         }
 
         private void buttonGeorgian_Click(object sender, EventArgs e)
         {
             SaveLanguageSelection("georgian");
-            FormTopic topicForm = new FormTopic(username, "georgian");
-            topicForm.Show();
+            FormMenu formMenu = new FormMenu(username);
+            formMenu.Show();
+            MessageBox.Show("Теперь вы можете выбрать тематику для обучения!");
             this.Hide();
 
         }
 
         private void SaveLanguageSelection(string language)
         {
-            //string usersDirectory = $"{Directory.GetCurrentDirectory()}\\users";
-            //string userFile = $"{usersDirectory}\\{username}.txt";
-            //File.AppendAllText(userFile, $",{language}");
             string usersDirectory = $"{Directory.GetCurrentDirectory()}\\users";
             string userFile = $"{usersDirectory}\\{username}.txt";
 
             // Прочитать содержимое файла пользователя
             string fileContents = File.Exists(userFile) ? File.ReadAllText(userFile) : "";
 
-            // Проверить, содержит ли файл язык
-            if (fileContents.Contains(language))
+            // Проверить, содержит ли файл язык на 3-м месте
+            string[] userData = fileContents.Split(',');
+            if (userData.Length >= 3)
             {
-                // Заменить существующий язык на новый
-                fileContents = fileContents.Replace(language, $"{language}");
+                userData[2] = language; // Заменить элемент на 3-м месте на язык
+                fileContents = string.Join(",", userData);
             }
             else
             {
@@ -91,6 +91,23 @@ namespace Train
             // Записать обновленное содержимое обратно в файл
             File.WriteAllText(userFile, fileContents);
 
+            // Вывести сообщение о выбранном языке
+            if (language == "armenian")
+            {
+                MessageBox.Show("Вы выбрали армянский язык");
+            }
+            else if (language == "georgian")
+            {
+                MessageBox.Show("Вы выбрали грузинский язык");
+            }
+            else if (language == "ossetian")
+            {
+                MessageBox.Show("Вы выбрали осетинский язык");
+            }
+            else
+            {
+                MessageBox.Show($"Вы выбрали язык {language}");
+            }
         }
     }
 }

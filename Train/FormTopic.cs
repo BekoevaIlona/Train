@@ -17,55 +17,32 @@ namespace Train
         static FormMenu formMenu = new FormMenu();
 
         private string username;
-        private string language;
 
-        public FormTopic(string username, string language)
+        public FormTopic(string username)
         {
             InitializeComponent();
             this.username = username;
-            this.language = language;
         }
 
-        //private void buttonFruitsVegetables_Click(object sender, EventArgs e)
-        //{
-        //    SaveTopicSelection("fruits_vegetables");
-        //    FormGame gameForm = new FormGame(username, language, "fruits_vegetables");
-        //    gameForm.Show();
-        //    this.Hide();
-        //}
-
-        //private void buttonAnimals_Click(object sender, EventArgs e)
-        //{
-        //    SaveTopicSelection("animals");
-        //    FormGame gameForm = new FormGame(username, language, "animals");
-        //    gameForm.Show();
-        //    this.Hide();
-        //}
-
-        //private void buttonNature_Click(object sender, EventArgs e)
-        //{
-        //    SaveTopicSelection("nature");
-        //    //FormGame gameForm = new FormGame(username, language, "nature");
-        //    //gameForm.Show();
-        //    //this.Hide();
-        //}
+        public FormTopic()
+        {
+            InitializeComponent();
+        }
 
         private void SaveTopicSelection(string topic)
         {
-            //string usersDirectory = $"{Directory.GetCurrentDirectory()}\\users";
-            //string userFile = $"{usersDirectory}\\{username}.txt";
-            //File.AppendAllText(userFile, $",{topic},0");
             string usersDirectory = $"{Directory.GetCurrentDirectory()}/users";
             string userFile = $"{usersDirectory}/{username}.txt";
 
             // Прочитать содержимое файла пользователя
             string fileContents = File.Exists(userFile) ? File.ReadAllText(userFile) : "";
 
-            // Проверить, содержит ли файл тему
-            if (fileContents.Contains(topic))
+            // Проверить, содержит ли файл тему на 4-м месте
+            string[] userData = fileContents.Split(',');
+            if (userData.Length >= 4)
             {
-                // Заменить существующую тему на новую
-                fileContents = fileContents.Replace(topic, $"{topic},0");
+                userData[3] = topic; // Заменить элемент на 4-м месте на тему
+                fileContents = string.Join(",", userData);
             }
             else
             {
@@ -76,21 +53,37 @@ namespace Train
             // Записать обновленное содержимое обратно в файл
             File.WriteAllText(userFile, fileContents);
 
+            // Вывести сообщение о выбранной тематике
+            string message = "";
+            switch (topic)
+            {
+                case "t1":
+                    message = "Дом";
+                    break;
+                case "t2":
+                    message = "Домашние животные";
+                    break;
+                case "t3":
+                    message = "Дикие животные";
+                    break;
+                case "t4":
+                    message = "Овощи, фрукты и ягоды";
+                    break;
+                case "t5":
+                    message = "Члены семьи и профессии";
+                    break;
+                default:
+                    message = "неизвестная тематика";
+                    break;
+            }
+            MessageBox.Show($"Вы выбрали тематику \"{message}\"");
         }
 
         private void FormTopic_Load(object sender, EventArgs e)
         {
 
         }
-
-        private void buttonFruitsVegetables_Click(object sender, EventArgs e)
-        {
-            SaveTopicSelection("fruits_vegetables");
-            FormGame gameForm = new FormGame(username, language, "fruits_vegetables");
-            gameForm.Show();
-            this.Hide();
-        }
-
+        
         private void buttonMenu_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -100,6 +93,51 @@ namespace Train
         private void buttonClose_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+
+        private void buttonHouse_Click(object sender, EventArgs e)
+        {
+            SaveTopicSelection("t1");
+            FormMenu formMenu = new FormMenu(username);
+            formMenu.Show();
+            MessageBox.Show("Все данные выбраны. \nТеперь вы можете начать игру!");
+            this.Hide();
+        }
+
+        private void buttonPets_Click(object sender, EventArgs e)
+        {
+            SaveTopicSelection("t2");
+            FormMenu formMenu = new FormMenu(username);
+            formMenu.Show();
+            this.Hide();
+        }
+
+        private void buttonWildAnimals_Click(object sender, EventArgs e)
+        {
+            SaveTopicSelection("t3");
+            FormMenu formMenu = new FormMenu(username);
+            formMenu.Show();
+            MessageBox.Show("Все данные выбраны. \nТеперь вы можете начать игру!");
+            this.Hide();
+        }
+
+        private void buttonVegetablesFruitsBerries_Click(object sender, EventArgs e)
+        {
+            SaveTopicSelection("t4");
+            FormMenu formMenu = new FormMenu(username);
+            formMenu.Show();
+            MessageBox.Show("Все данные выбраны. \nТеперь вы можете начать игру!");
+            this.Hide();
+        }
+
+        private void buttonFamily_membersProfessions_Click(object sender, EventArgs e)
+        {
+            SaveTopicSelection("t5");
+            FormMenu formMenu = new FormMenu(username);
+            formMenu.Show();
+            MessageBox.Show("Все данные выбраны. \nТеперь вы можете начать игру!");
+            this.Hide();
         }
     }
 }

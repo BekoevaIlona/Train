@@ -8,12 +8,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Train
 {
     public partial class FormAuthorization : Form
     {
-        static FormMenu formMenu = new FormMenu();
+        public string username;
         public FormAuthorization()
         {
             InitializeComponent();
@@ -26,12 +27,13 @@ namespace Train
         private void buttonMenu_Click(object sender, EventArgs e)
         {
             this.Hide();
+            FormMenu formMenu = new FormMenu(username);
             formMenu.ShowDialog();
         }
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            string username = textBoxLogin.Text;
+            username = textBoxLogin.Text;
             string password = textBoxPassword.Text;
 
             // Проверяем, чтобы поля логина и пароля были заполнены
@@ -54,47 +56,48 @@ namespace Train
             if (data.Length >= 2 && data[1] == password)
             {
                 // Переходим на следующую форму
-                FormLanguageSelection languageForm = new FormLanguageSelection(username);
-                languageForm.Show();
+                FormMenu formMenu = new FormMenu(username);
+                formMenu.Show();
                 this.Hide();
+
+                // Вход прошел успешно
+                MessageBox.Show($"Вход прошел успешно. Добро пожаловать, {username}!\nТеперь можете выбрать язык");
             }
             else
             {
                 MessageBox.Show("Неверный пароль");
                 return;
             }
-
-
-            
         }
 
         private void buttonRegister_Click(object sender, EventArgs e)
         {
-                string username = textBoxLogin.Text;
-                string password = textBoxPassword.Text;
+            username = textBoxLogin.Text;
+            string password = textBoxPassword.Text;
 
-                // Проверяем, чтобы поля логина и пароля были заполнены
-                if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
-                {
-                    MessageBox.Show("Введите логин и пароль");
-                    return;
-                }
+            // Проверяем, чтобы поля логина и пароля были заполнены
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+            {
+                MessageBox.Show("Введите логин и пароль");
+                return;
+            }
 
-                // Записываем логин и пароль в файл
-                string userData = $"{username},{password}";
-                string usersDirectory = $"{Directory.GetCurrentDirectory()}\\users";
-                if (!Directory.Exists(usersDirectory))
-                {
-                    Directory.CreateDirectory(usersDirectory);
-                }
-                string userFile = $"{usersDirectory}\\{username}.txt";
-                File.WriteAllText(userFile, userData);
+            // Записываем логин и пароль в файл
+            string userData = $"{username},{password}";
+            string usersDirectory = $"{Directory.GetCurrentDirectory()}\\users";
+            if (!Directory.Exists(usersDirectory))
+            {
+                Directory.CreateDirectory(usersDirectory);
+            }
+            string userFile = $"{usersDirectory}\\{username}.txt";
+            File.WriteAllText(userFile, userData);
 
-                // Переходим на следующую форму
-                FormLanguageSelection languageForm = new FormLanguageSelection(username);
-                languageForm.Show();
-                this.Hide();
-            
+            // Переходим на следующую форму
+            FormMenu formMenu = new FormMenu(username); formMenu.Show();
+            this.Hide();
+
+            // Регистрация прошла успешно
+            MessageBox.Show($"Регистрация прошла успешно. Добро пожаловать, {username}!\nТеперь можете выбрать язык");
         }
 
         private void FormAuthorization_Load(object sender, EventArgs e)
