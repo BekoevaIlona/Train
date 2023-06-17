@@ -74,11 +74,29 @@ namespace Train
             // Отобразить форму выбора темы
             FormLanguageSelection language = new FormLanguageSelection(username);
             DialogResult result = language.ShowDialog();
-
-            // Если пользователь выбрал тему, разблокировать кнопку buttonPlay
-            if (result == DialogResult.OK)
+            string usersDirectory = $"{Directory.GetCurrentDirectory()}\\users";
+            string userFile = $"{usersDirectory}\\{username}.txt";
+            
+            // Проверяем, существует ли файл с данными пользователя
+            if (File.Exists(userFile))
             {
-                buttonTopic.Enabled = true;
+                // Считываем содержимое файла в строку
+                string fileContent = File.ReadAllText(userFile);
+
+                // Разбиваем строку на отдельные элементы, используя запятую в качестве разделителя
+                string[] elements = fileContent.Split(',');
+
+                // Проверяем, что в строке достаточно элементов для получения нужного элемента
+                if (elements.Length >= 3)
+                {
+                    string l = elements[2]; // Получаем язык из третьего элемента строки
+
+                    // Проверяем, что язык не пустой
+                    if (!string.IsNullOrEmpty(l))
+                    {
+                        buttonTopic.Enabled = true; // Разблокируем кнопку
+                    }
+                }
             }
         }
 
@@ -88,9 +106,29 @@ namespace Train
             DialogResult result = topic.ShowDialog();
 
             // Если пользователь выбрал тему, разблокировать кнопку buttonPlay
-            if (result == DialogResult.OK)
+            string usersDirectory = $"{Directory.GetCurrentDirectory()}\\users";
+            string userFile = $"{usersDirectory}\\{username}.txt";
+
+            // Проверяем, существует ли файл с данными пользователя
+            if (File.Exists(userFile))
             {
-                buttonPlay.Enabled = true;
+                // Считываем содержимое файла в строку
+                string fileContent = File.ReadAllText(userFile);
+
+                // Разбиваем строку на отдельные элементы, используя запятую в качестве разделителя
+                string[] elements = fileContent.Split(',');
+
+                // Проверяем, что в строке достаточно элементов для получения нужного элемента
+                if (elements.Length >= 4)
+                {
+                    string l = elements[3]; // Получаем язык из третьего элемента строки
+
+                    // Проверяем, что язык не пустой
+                    if (!string.IsNullOrEmpty(l))
+                    {
+                        buttonPlay.Enabled = true; // Разблокируем кнопку
+                    }
+                }
             }
         }
 
