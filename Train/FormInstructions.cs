@@ -16,6 +16,7 @@ namespace Train
         public FormInstructions()
         {
             InitializeComponent();
+            components = new System.ComponentModel.Container();
         }
 
         private void buttonClose_Click(object sender, EventArgs e)

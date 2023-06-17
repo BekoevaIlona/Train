@@ -14,14 +14,17 @@ namespace Train
     {
         FormInstructions instructions = new FormInstructions();
         FormAuthorization authorization = new FormAuthorization();
-        FormLanguageSelection languageSelection = new FormLanguageSelection();
         FormLeaderboard leaderboard = new FormLeaderboard();
-        FormGameTeach formGameTeach = new FormGameTeach();
+        private string username;
+        public FormMenu(string username)
+        {
+            InitializeComponent();
+            this.username = username;
+        }
         public FormMenu()
         {
             InitializeComponent();
         }
-        
         private void buttonClose_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -29,12 +32,21 @@ namespace Train
         private void buttonPlay_Click(object sender, EventArgs e)
         {
             this.Hide();
+            FormGameTeach formGameTeach = new FormGameTeach(username);
             formGameTeach.ShowDialog();
         }
         private void buttonInstruction_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            instructions.ShowDialog();
+            try
+            {
+                this.Hide();
+                instructions.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                // Обработка исключения
+                MessageBox.Show("Произошла ошибка: " + ex.Message);
+            }
         }
 
         private void buttonExit_Click(object sender, EventArgs e)
@@ -46,6 +58,7 @@ namespace Train
         private void buttonLanguage_Click(object sender, EventArgs e)
         {
             this.Hide();
+            FormLanguageSelection languageSelection = new FormLanguageSelection(username);
             languageSelection.ShowDialog();
         }
 
@@ -55,11 +68,11 @@ namespace Train
             authorization.ShowDialog();
         }
 
-       
-
         private void buttonTopic_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            FormTopic topic = new FormTopic(username);
+            topic.ShowDialog();
         }
     }
 }

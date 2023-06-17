@@ -38,8 +38,8 @@
             this.buttonMenu.BackgroundImage = global::Train.Properties.Resources.IconMenu;
             this.buttonMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonMenu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonMenu.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.buttonMenu.FlatAppearance.BorderSize = 0;
+            this.buttonMenu.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(26)))), ((int)(((byte)(12)))));
+            this.buttonMenu.FlatAppearance.BorderSize = 3;
             this.buttonMenu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.buttonMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.buttonMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -56,8 +56,8 @@
             this.buttonClose.BackgroundImage = global::Train.Properties.Resources.крестик1;
             this.buttonClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonClose.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.buttonClose.FlatAppearance.BorderSize = 0;
+            this.buttonClose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(26)))), ((int)(((byte)(12)))));
+            this.buttonClose.FlatAppearance.BorderSize = 3;
             this.buttonClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.buttonClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

@@ -1,2 +1,1 @@
-ilona,123,armenian,fruits_vegetables,0,georgian
-,georgian,fruits_vegetables,0
+ilona,ila,armenian,t4,20

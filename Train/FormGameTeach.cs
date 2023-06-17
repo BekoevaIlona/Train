@@ -3,27 +3,37 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Train.Train;
 
 namespace Train
 {
     public partial class FormGameTeach : Form
     {
-        static FormMenu formMenu = new FormMenu();
-
-        public FormGameTeach()
+        
+        Level Level;
+        public int lev;
+        ListCards ListCards;
+        private string username;
+        public FormGameTeach(string username)
         {
             InitializeComponent();
-            string rulesText = "Совсем скоро ты отправишься в незабываемое приключение!\n\nНо перед этим тебе нужно изучить несколько новых слов\n\nДля того, чтобы изучать новые слова, ты находишьсяв\nрежиме \"Учить слова\".\n\nСейчас перед тобой находится несколько картинок-образов,\nчтобы услышать произношение слова, нажми на картинку,\nтакже, под каждой картинкой будет написано слово\nпрочитай его и запомни это пригодится тебе в\nследующем режиме.\n\nУдачи в изучении новых слов!";
+            this.username = username;
+            string rulesText = "Совсем скоро ты отправишься в незабываемое приключение!\n\nНо перед этим тебе нужно изучить несколько новых слов\n\nДля того, чтобы изучать новые слова, ты находишься в\nрежиме \"Учить слова\".\n\nСейчас перед тобой находится несколько картинок-образов,\nчтобы услышать произношение слова, нажми на картинку,\nтакже, под каждой картинкой будет написано слово\nпрочитай его и запомни это пригодится тебе в\nследующем режиме.\n\nУдачи в изучении новых слов!";
             labelRules.Text = rulesText;
+            lev = Level.level;
+            Level = new Level(lev);
+            ListCards = new ListCards(20, panelCards, AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Right);
         }
 
         private void buttonMenu_Click(object sender, EventArgs e)
         {
             this.Hide();
+            FormMenu formMenu = new FormMenu(username);
             formMenu.ShowDialog();
         }
 
@@ -34,6 +44,27 @@ namespace Train
 
         private void labelRules_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void FormGameTeach_Load(object sender, EventArgs e)
+        {
+             string cardsDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "cards");
+                if (Directory.Exists(cardsDirectory))
+                {
+                    string[] cardFiles = Directory.GetFiles(cardsDirectory);
+                    foreach (string cardFile in cardFiles)
+                    {
+                        string fileName = Path.GetFileNameWithoutExtension(cardFile);
+                        if (int.TryParse(fileName, out int id))
+                        {
+                            Card card = new Card(id, panelCards, 0, 0);
+                            card.Load(cardFile);
+                            card.SizeMode = PictureBoxSizeMode.AutoSize;
+                            panelCards.Controls.Add(card);
+                        }
+                    }
+             }
 
         }
     }
