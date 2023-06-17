@@ -134,7 +134,7 @@
             this.buttonRating.TabIndex = 7;
             this.buttonRating.Text = "рейтинг";
             this.buttonRating.UseVisualStyleBackColor = false;
-            this.buttonRating.Click += new System.EventHandler(this.buttonExit_Click);
+            this.buttonRating.Click += new System.EventHandler(this.buttonRating_Click);
             // 
             // buttonAuthorization
             // 
@@ -150,7 +150,7 @@
             this.buttonAuthorization.TabIndex = 9;
             this.buttonAuthorization.Text = "авторизация";
             this.buttonAuthorization.UseVisualStyleBackColor = false;
-            this.buttonAuthorization.Click += new System.EventHandler(this.buttonRentrance_Click);
+            this.buttonAuthorization.Click += new System.EventHandler(this.buttonAuthorization_Click);
             // 
             // FormMenu
             // 
@@ -172,6 +172,7 @@
             this.Name = "FormMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormMenu";
+            this.Load += new System.EventHandler(this.FormMenu_Load);
             this.ResumeLayout(false);
 
         }

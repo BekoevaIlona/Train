@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,9 +26,22 @@ namespace Train
         {
             InitializeComponent();
         }
+       
         private void buttonClose_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+        private void buttonAuthorization_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormAuthorization formAuthorization = new FormAuthorization();
+            formAuthorization.ShowDialog();
+
+            // Разблокировать кнопку языка, если пользователь авторизован
+            if (!string.IsNullOrEmpty(formAuthorization.username))
+            {
+                buttonLanguage.Enabled = true;
+            }
         }
         private void buttonPlay_Click(object sender, EventArgs e)
         {
@@ -49,7 +63,7 @@ namespace Train
             }
         }
 
-        private void buttonExit_Click(object sender, EventArgs e)
+        private void buttonRating_Click(object sender, EventArgs e)
         {
             this.Hide();
             leaderboard.ShowDialog();
@@ -57,22 +71,41 @@ namespace Train
 
         private void buttonLanguage_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            FormLanguageSelection languageSelection = new FormLanguageSelection(username);
-            languageSelection.ShowDialog();
-        }
+            // Отобразить форму выбора темы
+            FormLanguageSelection language = new FormLanguageSelection(username);
+            DialogResult result = language.ShowDialog();
 
-        private void buttonRentrance_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            authorization.ShowDialog();
+            // Если пользователь выбрал тему, разблокировать кнопку buttonPlay
+            if (result == DialogResult.OK)
+            {
+                buttonTopic.Enabled = true;
+            }
         }
 
         private void buttonTopic_Click(object sender, EventArgs e)
         {
-            this.Hide();
             FormTopic topic = new FormTopic(username);
-            topic.ShowDialog();
+            DialogResult result = topic.ShowDialog();
+
+            // Если пользователь выбрал тему, разблокировать кнопку buttonPlay
+            if (result == DialogResult.OK)
+            {
+                buttonPlay.Enabled = true;
+            }
+        }
+
+        private void FormMenu_Load(object sender, EventArgs e)
+        {
+            // Блокировать все кнопки, кроме указанных
+            buttonLanguage.Enabled = false;
+            buttonTopic.Enabled = false;
+            buttonPlay.Enabled = false;
+
+            // Если пользователь авторизован, разблокировать кнопку языка
+            if (!string.IsNullOrEmpty(username))
+            {
+                buttonLanguage.Enabled = true;
+            }
         }
     }
 }
