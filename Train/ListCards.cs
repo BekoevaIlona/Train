@@ -14,13 +14,13 @@ namespace Train
         public class Card : PictureBox
         {
             public int id;
-
+            public string idTopic;
             public Card(int id, Control control, int x, int y)
             {
                 this.id = id;
                 this.Tag = id;
 
-                string imagePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Cards", $"t3p{id}.JPG");
+                string imagePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Cards", $"t2p{id}.JPG");
                 this.Load(imagePath);
                 control.Controls.Add(this);
                 this.SizeMode = PictureBoxSizeMode.Zoom;
@@ -30,14 +30,15 @@ namespace Train
                 this.MouseMove += Card_MouseMove;
                 this.MouseUp += Card_MouseUp;
             }
-            public Card(int pId, Control control, int x, int y, AnchorStyles anchor = AnchorStyles.None)
+            public Card(string tId, int pId, Control control, int x, int y, AnchorStyles anchor = AnchorStyles.None)
             {
+                this.idTopic = tId;
                 this.id = pId;
                 this.Tag = pId;
                 this.Location = new Point(x, y);
                 this.Anchor = anchor;
                 control.Controls.Add(this);
-                string imagePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Cards", $"t3p{pId}Russian.JPG");
+                string imagePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Cards", $"{tId}p{pId}Russian.JPG");
                 this.Load(imagePath);
                 control.Controls.Add(this);
                 this.SizeMode = PictureBoxSizeMode.Zoom;
@@ -78,16 +79,16 @@ namespace Train
             {
             }
 
-            public ListCards(int countCards, Control control, AnchorStyles anchor = AnchorStyles.None)
+            public ListCards(string tId, int countCards, Control control, AnchorStyles anchor = AnchorStyles.None)
             {
                 int x = 0;
                 int y = 0;
                 int cardCounter = 0;
                 int cardsPerRow = 4;
-                int cardWidthWithPadding = (new Card(0, control, 0, 0, anchor)).Width + 1; // ширина объекта Card с учетом отступа в 10 пикселей
+                int cardWidthWithPadding = (new Card(tId, 0, control, 0, 0, anchor)).Width + 1; // ширина объекта Card с учетом отступа в 10 пикселей
                 for (int j = 0; j < countCards; j++)
                 {
-                    Card c = new Card(j, control, x, y, anchor);
+                    Card c = new Card(tId, j, control, x, y, anchor);
                     control.Controls.Add(c);
                     lstCard.Add(c);
                     cardCounter++;

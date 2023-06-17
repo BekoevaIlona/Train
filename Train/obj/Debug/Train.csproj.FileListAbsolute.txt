@@ -116,3 +116,12 @@ C:\Users\Илона\OneDrive\Рабочий стол\Проект ( Языков
 C:\Users\Илона\OneDrive\Рабочий стол\Проект ( Языковая игра - Поезд )\Новая папка (4)\Train\obj\Debug\Train.csproj.CoreCompileInputs.cache
 C:\Users\Илона\OneDrive\Рабочий стол\Проект ( Языковая игра - Поезд )\Новая папка (4)\Train\obj\Debug\Train.exe
 C:\Users\Илона\OneDrive\Рабочий стол\Проект ( Языковая игра - Поезд )\Новая папка (4)\Train\obj\Debug\Train.pdb
+C:\Users\Илона\OneDrive\Рабочий стол\Проект ( Языковая игра - Поезд )\train\Train\bin\Debug\Resources\ofont.ru_Bowler.ttf
+C:\Users\Илона\OneDrive\Рабочий стол\Проект ( Языковая игра - Поезд )\train\Train\bin\Debug\Resources\MachinaOrtoSls_Bold.ttf
+C:\Users\Илона\OneDrive\Рабочий стол\Проект ( Языковая игра - Поезд )\train\Train\obj\Debug\Train.FormAuthorization.resources
+C:\Users\Илона\OneDrive\Рабочий стол\Проект ( Языковая игра - Поезд )\train\Train\obj\Debug\Train.FormGame.resources
+C:\Users\Илона\OneDrive\Рабочий стол\Проект ( Языковая игра - Поезд )\train\Train\obj\Debug\Train.FormGameTeach.resources
+C:\Users\Илона\OneDrive\Рабочий стол\Проект ( Языковая игра - Поезд )\train\Train\obj\Debug\Train.FormLanguageSelection.resources
+C:\Users\Илона\OneDrive\Рабочий стол\Проект ( Языковая игра - Поезд )\train\Train\obj\Debug\Train.FormLeaderboard.resources
+C:\Users\Илона\OneDrive\Рабочий стол\Проект ( Языковая игра - Поезд )\train\Train\obj\Debug\Train.FormMenu.resources
+C:\Users\Илона\OneDrive\Рабочий стол\Проект ( Языковая игра - Поезд )\train\Train\obj\Debug\Train.FormTopic.resources
