@@ -14,6 +14,7 @@ namespace Train
         public class Card : PictureBox
         {
             public int id;
+            public int idTopic;
 
             public Card(int id, Control control, int x, int y)
             {
