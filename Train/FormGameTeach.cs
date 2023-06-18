@@ -71,5 +71,10 @@ namespace Train
              }
 
         }
+
+        private void buttonNextCards_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -32,6 +32,9 @@
             this.buttonClose = new System.Windows.Forms.Button();
             this.labelRules = new System.Windows.Forms.Label();
             this.panelCards = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonPlay = new System.Windows.Forms.Button();
+            this.buttonNextCards = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonMenu
@@ -87,10 +90,49 @@
             // panelCards
             // 
             this.panelCards.BackColor = System.Drawing.Color.White;
-            this.panelCards.Location = new System.Drawing.Point(814, 81);
+            this.panelCards.Location = new System.Drawing.Point(814, 127);
             this.panelCards.Name = "panelCards";
-            this.panelCards.Size = new System.Drawing.Size(651, 747);
+            this.panelCards.Size = new System.Drawing.Size(322, 616);
             this.panelCards.TabIndex = 7;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Location = new System.Drawing.Point(1143, 127);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(322, 616);
+            this.panel1.TabIndex = 8;
+            // 
+            // buttonPlay
+            // 
+            this.buttonPlay.BackColor = System.Drawing.Color.White;
+            this.buttonPlay.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(26)))), ((int)(((byte)(12)))));
+            this.buttonPlay.FlatAppearance.BorderSize = 6;
+            this.buttonPlay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonPlay.Font = new System.Drawing.Font("a_MachinaOrtoSls", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonPlay.Location = new System.Drawing.Point(1020, 34);
+            this.buttonPlay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonPlay.Name = "buttonPlay";
+            this.buttonPlay.Size = new System.Drawing.Size(233, 64);
+            this.buttonPlay.TabIndex = 9;
+            this.buttonPlay.Text = "играть";
+            this.buttonPlay.UseVisualStyleBackColor = false;
+            // 
+            // buttonNextCards
+            // 
+            this.buttonNextCards.BackColor = System.Drawing.Color.White;
+            this.buttonNextCards.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(26)))), ((int)(((byte)(12)))));
+            this.buttonNextCards.FlatAppearance.BorderSize = 6;
+            this.buttonNextCards.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonNextCards.Font = new System.Drawing.Font("a_MachinaOrtoSls", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonNextCards.Location = new System.Drawing.Point(814, 763);
+            this.buttonNextCards.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonNextCards.Name = "buttonNextCards";
+            this.buttonNextCards.Size = new System.Drawing.Size(651, 66);
+            this.buttonNextCards.TabIndex = 10;
+            this.buttonNextCards.Text = "Показать следующие картинки";
+            this.buttonNextCards.UseVisualStyleBackColor = false;
+            this.buttonNextCards.Click += new System.EventHandler(this.buttonNextCards_Click);
             // 
             // FormGameTeach
             // 
@@ -99,6 +141,9 @@
             this.BackgroundImage = global::Train.Properties.Resources.formGameTeach;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1482, 853);
+            this.Controls.Add(this.buttonPlay);
+            this.Controls.Add(this.buttonNextCards);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelCards);
             this.Controls.Add(this.labelRules);
             this.Controls.Add(this.buttonMenu);
@@ -119,5 +164,8 @@
         private System.Windows.Forms.Button buttonClose;
         private System.Windows.Forms.Label labelRules;
         private System.Windows.Forms.Panel panelCards;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button buttonPlay;
+        private System.Windows.Forms.Button buttonNextCards;
     }
 }
