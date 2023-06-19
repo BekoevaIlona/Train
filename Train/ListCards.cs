@@ -30,19 +30,18 @@ namespace Train
                 this.MouseMove += Card_MouseMove;
                 this.MouseUp += Card_MouseUp;
             }
-            public Card(string tId, int pId, Control control, int x, int y, AnchorStyles anchor = AnchorStyles.None)
+            public Card(string tId, int pId, Control control, int x, int y)
             {
                 this.idTopic = tId;
                 this.id = pId;
                 this.Tag = pId;
                 this.Location = new Point(x, y);
-                this.Anchor = anchor;
                 control.Controls.Add(this);
                 string imagePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Cards", $"{tId}p{pId}Russian.JPG");
                 this.Load(imagePath);
                 control.Controls.Add(this);
                 this.SizeMode = PictureBoxSizeMode.Zoom;
-                this.Size = new Size(120, 120);
+                this.Size = new Size(180, 180);
                 Location = new Point(x, y);
             }
 
@@ -79,28 +78,31 @@ namespace Train
             {
             }
 
-            public ListCards(string tId, int countCards, Control control, AnchorStyles anchor = AnchorStyles.None)
+            public ListCards(string tId, int countCards, Control control, int startIndex = 0)
             {
                 int x = 0;
                 int y = 0;
                 int cardCounter = 0;
-                int cardsPerRow = 4;
-                int cardWidthWithPadding = (new Card(tId, 0, control, 0, 0, anchor)).Width + 1; // ширина объекта Card с учетом отступа в 10 пикселей
+                int cardsPerRow = 1;
+                int cardWidthWithPadding = (new Card(tId, 0, control, 0, 0)).Width + 1; 
                 for (int j = 0; j < countCards; j++)
                 {
-                    Card c = new Card(tId, j, control, x, y, anchor);
+                    // Проверяю, нужно ли показывать текущую картинку
+                    if (j < startIndex || j >= startIndex + 3) continue;
+
+                    Card c = new Card(tId, j, control, x, y);
                     control.Controls.Add(c);
                     lstCard.Add(c);
                     cardCounter++;
-                    if (cardCounter >= cardsPerRow) // если количество картинок в ряду достигло трех
+                    if (cardCounter >= cardsPerRow) 
                     {
-                        y += c.Height + 1; // увеличиваем значение y на высоту объекта Card и 10 пикселей
-                        x = 0; // сбрасываем значение x до 0
-                        cardCounter = 0; // сбрасываем счетчик картинок в ряду до 0
+                        y += c.Height + 1; 
+                        x = 0; 
+                        cardCounter = 0; 
                     }
                     else
                     {
-                        x += cardWidthWithPadding; // увеличиваем значение x на ширину объекта Card и 10 пикселей
+                        x += cardWidthWithPadding; 
                     }
                 }
             }

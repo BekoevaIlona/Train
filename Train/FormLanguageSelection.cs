@@ -60,10 +60,7 @@ namespace Train
         private void buttonGeorgian_Click(object sender, EventArgs e)
         {
             SaveLanguageSelection("georgian");
-            FormMenu formMenu = new FormMenu(username);
-            formMenu.Show();
-            MessageBox.Show("Теперь вы можете выбрать тематику для обучения!");
-            this.Hide();
+            
 
         }
 
@@ -91,23 +88,25 @@ namespace Train
             // Записать обновленное содержимое обратно в файл
             File.WriteAllText(userFile, fileContents);
 
-            // Вывести сообщение о выбранном языке
-            if (language == "armenian")
-            {
-                MessageBox.Show("Вы выбрали армянский язык");
-            }
-            else if (language == "georgian")
-            {
-                MessageBox.Show("Вы выбрали грузинский язык");
-            }
-            else if (language == "ossetian")
-            {
-                MessageBox.Show("Вы выбрали осетинский язык");
-            }
-            else
-            {
-                MessageBox.Show($"Вы выбрали язык {language}");
-            }
+            //// Вывести сообщение о выбранном языке
+            //if (language == "armenian")
+            //{
+            //    MessageBox.Show("Вы выбрали армянский язык");
+            //}
+            //else if (language == "georgian")
+            //{
+            //    MessageBox.Show("Вы выбрали грузинский язык");
+            //}
+            //else if (language == "ossetian")
+            //{
+            //    MessageBox.Show("Вы выбрали осетинский язык");
+            //}
+            //else
+            //{
+            //    MessageBox.Show($"Вы выбрали язык {language}");
+            //}
         }
+
+        
     }
 }

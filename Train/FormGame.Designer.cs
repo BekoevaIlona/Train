@@ -49,7 +49,6 @@
             this.buttonMenu.Size = new System.Drawing.Size(40, 40);
             this.buttonMenu.TabIndex = 3;
             this.buttonMenu.UseVisualStyleBackColor = false;
-            this.buttonMenu.Click += new System.EventHandler(this.buttonMenu_Click);
             // 
             // buttonClose
             // 
@@ -67,14 +66,13 @@
             this.buttonClose.Size = new System.Drawing.Size(40, 40);
             this.buttonClose.TabIndex = 2;
             this.buttonClose.UseVisualStyleBackColor = true;
-            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
             // 
             // FormGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = global::Train.Properties.Resources.k2;
+            this.BackgroundImage = global::Train.Properties.Resources.FormGame;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1500, 900);
             this.Controls.Add(this.buttonMenu);

@@ -19,7 +19,7 @@ namespace Train
         public int lev;
         ListCards ListCards;
         private string username;
-
+        private int cardListIndex = 0;
         public FormGameTeach(string username)
         {
             InitializeComponent();
@@ -27,11 +27,8 @@ namespace Train
             string rulesText = "Совсем скоро ты отправишься в незабываемое приключение!\n\nНо перед этим тебе нужно изучить несколько новых слов\n\nДля того, чтобы изучать новые слова, ты находишься в\nрежиме \"Учить слова\".\n\nСейчас перед тобой находится несколько картинок-образов,\nчтобы услышать произношение слова, нажми на картинку,\nтакже, под каждой картинкой будет написано слово\nпрочитай его и запомни это пригодится тебе в\nследующем режиме.\n\nУдачи в изучении новых слов!";
             labelRules.Text = rulesText;
 
-            string usersDirectory = $"{Directory.GetCurrentDirectory()}\\users";
-            string userFile = $"{usersDirectory}\\{username}.txt";
-            string[] userData = File.ReadAllText(userFile).Split(',');
-            string tId = userData.Length >= 4 ? userData[3] : "";
-            ListCards = new ListCards(tId, 20, panelCards, AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Right);
+            
+            //ListCards = new ListCards(tId, 20, panelCards, AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Right);
         }
 
         private void buttonMenu_Click(object sender, EventArgs e)
@@ -71,10 +68,42 @@ namespace Train
              }
 
         }
-
+        private List<PictureBox> lstCard = new List<PictureBox>();
         private void buttonNextCards_Click(object sender, EventArgs e)
         {
+            
+                // Вычисляем аргументы для метода ListCards
+                string usersDirectory = $"{Directory.GetCurrentDirectory()}\\users";
+                string userFile = $"{usersDirectory}\\{username}.txt";
+                string[] userData = File.ReadAllText(userFile).Split(',');
+                string tId = userData.Length >= 4 ? userData[3] : "";
+                int countCards = 20;
+                Control control = panelCards;
 
+                // Удаляем все картинки из контрола
+                while (control.Controls.Count > 0)
+                {
+                    control.Controls.Remove(control.Controls[0]);
+                }
+
+                // Очищаем список картинок
+                lstCard.Clear();
+
+                // Увеличиваем индекс первой картинки, которую нужно показать, на 3
+                cardListIndex += 3;
+
+                // Проверяем, не превышает ли индекс первой картинки количество картинок в списке
+                if (cardListIndex >= 20)
+                {
+                    cardListIndex = 0;
+                }
+
+                // Вычисляем начальный индекс картинки для ListCards
+                int startIndex = cardListIndex;
+
+                // Вызываем метод ListCards с новым индексом
+                ListCards = new ListCards(tId, countCards, control, startIndex);
+            
         }
     }
 }
