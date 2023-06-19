@@ -15,6 +15,7 @@ namespace Train
         {
             public int id;
             public string idTopic;
+            public string language;
             public Card(int id, Control control, int x, int y)
             {
                 this.id = id;
@@ -30,18 +31,19 @@ namespace Train
                 this.MouseMove += Card_MouseMove;
                 this.MouseUp += Card_MouseUp;
             }
-            public Card(string tId, int pId, Control control, int x, int y)
+            public Card(string tId, int pId, string language, Control control, int x, int y)
             {
                 this.idTopic = tId;
                 this.id = pId;
                 this.Tag = pId;
+                this.language = language;
                 this.Location = new Point(x, y);
                 control.Controls.Add(this);
-                string imagePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Cards", $"{tId}p{pId}Russian.JPG");
+                string imagePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Cards", $"{tId}p{pId}{language}.JPG");
                 this.Load(imagePath);
                 control.Controls.Add(this);
                 this.SizeMode = PictureBoxSizeMode.Zoom;
-                this.Size = new Size(180, 180);
+                this.Size = new Size(170, 170);
                 Location = new Point(x, y);
             }
 
@@ -72,25 +74,25 @@ namespace Train
 
         class ListCards
         {
-            public List<Card> lstCard = new List<Card>();
+            public static List<Card> lstCard = new List<Card>();
 
             public ListCards()
             {
             }
 
-            public ListCards(string tId, int countCards, Control control, int startIndex = 0)
+            public ListCards(string tId, int countCards, string language, Control control, int startIndex = 0)
             {
                 int x = 0;
                 int y = 0;
                 int cardCounter = 0;
                 int cardsPerRow = 1;
-                int cardWidthWithPadding = (new Card(tId, 0, control, 0, 0)).Width + 1; 
+                int cardWidthWithPadding = (new Card(tId, 0, language, control, 0, 0)).Width + 1; 
                 for (int j = 0; j < countCards; j++)
                 {
                     // Проверяю, нужно ли показывать текущую картинку
-                    if (j < startIndex || j >= startIndex + 3) continue;
+                    if (j < startIndex  || j >= startIndex + 3) continue;
 
-                    Card c = new Card(tId, j, control, x, y);
+                    Card c = new Card(tId, j, language, control, x, y);
                     control.Controls.Add(c);
                     lstCard.Add(c);
                     cardCounter++;

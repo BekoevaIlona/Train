@@ -41,7 +41,7 @@ namespace Train
         }
         private void buttonOssetian_Click(object sender, EventArgs e)
         {
-            SaveLanguageSelection("ossetian");
+            SaveLanguageSelection("Ossetian");
             FormMenu formMenu = new FormMenu(username);
             formMenu.Show();
             MessageBox.Show("Теперь вы можете выбрать тематику для обучения!");
@@ -50,7 +50,7 @@ namespace Train
 
         private void buttonArmenian_Click(object sender, EventArgs e)
         {
-            SaveLanguageSelection("armenian");
+            SaveLanguageSelection("Armenian");
             FormMenu formMenu = new FormMenu(username);
             formMenu.Show();
             MessageBox.Show("Теперь вы можете выбрать тематику для обучения!");
@@ -59,7 +59,7 @@ namespace Train
 
         private void buttonGeorgian_Click(object sender, EventArgs e)
         {
-            SaveLanguageSelection("georgian");
+            SaveLanguageSelection("Georgian");
             
 
         }

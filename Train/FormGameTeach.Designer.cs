@@ -32,7 +32,7 @@
             this.buttonClose = new System.Windows.Forms.Button();
             this.labelRules = new System.Windows.Forms.Label();
             this.panelCards = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelCardsSelectedLanguage = new System.Windows.Forms.Panel();
             this.buttonPlay = new System.Windows.Forms.Button();
             this.buttonNextCards = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -90,18 +90,18 @@
             // panelCards
             // 
             this.panelCards.BackColor = System.Drawing.Color.White;
-            this.panelCards.Location = new System.Drawing.Point(814, 127);
+            this.panelCards.Location = new System.Drawing.Point(841, 128);
             this.panelCards.Name = "panelCards";
-            this.panelCards.Size = new System.Drawing.Size(322, 616);
+            this.panelCards.Size = new System.Drawing.Size(295, 616);
             this.panelCards.TabIndex = 7;
             // 
-            // panel1
+            // panelCardsSelectedLanguage
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(1143, 127);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(322, 616);
-            this.panel1.TabIndex = 8;
+            this.panelCardsSelectedLanguage.BackColor = System.Drawing.Color.White;
+            this.panelCardsSelectedLanguage.Location = new System.Drawing.Point(1170, 128);
+            this.panelCardsSelectedLanguage.Name = "panelCardsSelectedLanguage";
+            this.panelCardsSelectedLanguage.Size = new System.Drawing.Size(295, 616);
+            this.panelCardsSelectedLanguage.TabIndex = 8;
             // 
             // buttonPlay
             // 
@@ -143,7 +143,7 @@
             this.ClientSize = new System.Drawing.Size(1482, 853);
             this.Controls.Add(this.buttonPlay);
             this.Controls.Add(this.buttonNextCards);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelCardsSelectedLanguage);
             this.Controls.Add(this.panelCards);
             this.Controls.Add(this.labelRules);
             this.Controls.Add(this.buttonMenu);
@@ -164,7 +164,7 @@
         private System.Windows.Forms.Button buttonClose;
         private System.Windows.Forms.Label labelRules;
         private System.Windows.Forms.Panel panelCards;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelCardsSelectedLanguage;
         private System.Windows.Forms.Button buttonPlay;
         private System.Windows.Forms.Button buttonNextCards;
     }

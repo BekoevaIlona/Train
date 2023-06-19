@@ -50,25 +50,9 @@ namespace Train
 
         private void FormGameTeach_Load(object sender, EventArgs e)
         {
-             string cardsDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "cards");
-                if (Directory.Exists(cardsDirectory))
-                {
-                    string[] cardFiles = Directory.GetFiles(cardsDirectory);
-                    foreach (string cardFile in cardFiles)
-                    {
-                        string fileName = Path.GetFileNameWithoutExtension(cardFile);
-                        if (int.TryParse(fileName, out int id))
-                        {
-                            Card card = new Card(id, panelCards, 0, 0);
-                            card.Load(cardFile);
-                            card.SizeMode = PictureBoxSizeMode.AutoSize;
-                            panelCards.Controls.Add(card);
-                        }
-                    }
-             }
+             
 
         }
-        private List<PictureBox> lstCard = new List<PictureBox>();
         private void buttonNextCards_Click(object sender, EventArgs e)
         {
             
@@ -77,6 +61,8 @@ namespace Train
                 string userFile = $"{usersDirectory}\\{username}.txt";
                 string[] userData = File.ReadAllText(userFile).Split(',');
                 string tId = userData.Length >= 4 ? userData[3] : "";
+                string languageMain = "Russian";
+                string language = userData.Length >= 3 ? userData[2] : "";
                 int countCards = 20;
                 Control control = panelCards;
 
@@ -84,10 +70,11 @@ namespace Train
                 while (control.Controls.Count > 0)
                 {
                     control.Controls.Remove(control.Controls[0]);
-                }
+                    panelCardsSelectedLanguage.Controls.Remove(panelCardsSelectedLanguage.Controls[0]);
+            }
 
                 // Очищаем список картинок
-                lstCard.Clear();
+               ListCards.lstCard.Clear();
 
                 // Увеличиваем индекс первой картинки, которую нужно показать, на 3
                 cardListIndex += 3;
@@ -97,13 +84,17 @@ namespace Train
                 {
                     cardListIndex = 0;
                 }
-
+                
                 // Вычисляем начальный индекс картинки для ListCards
                 int startIndex = cardListIndex;
 
                 // Вызываем метод ListCards с новым индексом
-                ListCards = new ListCards(tId, countCards, control, startIndex);
+                ListCards = new ListCards(tId, countCards, languageMain, control, startIndex);
+                ListCards = new ListCards(tId, countCards, language, panelCardsSelectedLanguage, startIndex);
+
             
+
+
         }
     }
 }
