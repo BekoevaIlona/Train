@@ -9,7 +9,7 @@ namespace Train
     class Level
     {
         public static int level = 0;
-        public static int[] level_lst = { 8, 16, 24 };
+        public static int[] level_lst = { 5, 15, 19 };
         public List<int> IndexesCards;
         public List<int> IndexesWagons;
         static Random rnd = new Random();
@@ -19,7 +19,7 @@ namespace Train
             HashSet<int> set = new HashSet<int>();
             while (lev < 3 && set.Count != level_lst[level])
             {
-                set.Add(rnd.Next(0, 35));
+                set.Add(rnd.Next(0, 19));
             }
             IndexesWagons = set.ToList();
             IndexesCards = new List<int>(IndexesWagons);

@@ -96,5 +96,12 @@ namespace Train
 
 
         }
+
+        private void buttonPlay_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            FormGame formGame = new FormGame(username);
+            formGame.ShowDialog();
+        }
     }
 }

@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Windows.Forms;
+using System.IO;
+using System.Security.Cryptography;
 
 namespace Train
 {
@@ -21,17 +23,19 @@ namespace Train
         public class Wagon : PictureBox
         {
             public int IdPicture { get; }
-            public Languages Language { get; }
-
-            public Wagon(int idPicture, Languages language, Control control, int x, int y)
+            public string language;
+            public string idTopic;
+            public Wagon(string tId, int pId,  string language, Control control, int x, int y)
             {
-                Language = language;
-                IdPicture = idPicture;
-                Tag = idPicture;
+                this.language = language;
+                IdPicture = pId;
+                Tag = pId;
+                this.idTopic = tId;
 
-                Load($"Wagons/p{IdPicture}{Language}.png");
+                string imagePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Wagons", $"{tId}p{IdPicture}{language}.JPG");
+                this.Load(imagePath);
                 control.Controls.Add(this);
-                SizeMode = PictureBoxSizeMode.AutoSize;
+                this.Size = new Size(270, 170);
                 Location = new Point(x, y);
             }
 
@@ -48,11 +52,11 @@ namespace Train
 
             public static int Counter { get; private set; }
 
-            public ListWagons(List<int> arrayID, Languages language, Control control)
+            public ListWagons(string tId, List<int> arrayID, string language, Control control)
             {
                 for (int j = 0; j < arrayID.Count; j++)
                 {
-                    Wagon wagon = new Wagon(arrayID[j], language, control, 300 * (-1) * j, 10);
+                    Wagon wagon = new Wagon(tId, arrayID[j], language, control, 300 * (-1) * j, 10);
                     lstWagon.Add(wagon);
                 }
             }
@@ -67,7 +71,7 @@ namespace Train
                         {
                             FormGame.MovedCard = null;
                             Counter++;
-                            wagon.Image = Image.FromFile("Images/FilledWagon.png");
+                            wagon.Image = Image.FromFile("Resurses/FilledWagon.png");
                             movedCard.Dispose();
                             return;
                         }

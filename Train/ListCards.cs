@@ -18,16 +18,17 @@ namespace Train
             public int id;
             public string idTopic;
             public string language;
-            public Card(int id, Control control, int x, int y)
+            public Card(string tId, int pId, Control control, int x, int y)
             {
-                this.id = id;
-                this.Tag = id;
+                this.id = pId;
+                this.idTopic = tId;
+                this.Tag = pId;
 
-                string imagePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Cards", $"t2p{id}.JPG");
+                string imagePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "cards", $"{tId}p{pId}Russian.JPG");
                 this.Load(imagePath);
                 control.Controls.Add(this);
                 this.SizeMode = PictureBoxSizeMode.Zoom;
-                this.Size = new Size(100, 100);
+                this.Size = new Size(140, 140);
                 Location = new Point(x, y);
                 this.MouseDown += Card_MouseDown;
                 this.MouseMove += Card_MouseMove;
@@ -41,7 +42,7 @@ namespace Train
                 this.language = language;
                 this.Location = new Point(x, y);
                 control.Controls.Add(this);
-                string imagePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Cards", $"{tId}p{pId}{language}.JPG");
+                string imagePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "cards", $"{tId}p{pId}{language}.JPG");
                 this.Load(imagePath);
                 control.Controls.Add(this);
                 this.SizeMode = PictureBoxSizeMode.Zoom;
@@ -123,14 +124,14 @@ namespace Train
                     }
                 }
             }
-            public ListCards(List<int> arrayID, Control control)
+            public ListCards(List<int> arrayID, string tId, Control control)
             {
                 int a = 0, b = 0, q = 0;
                 for (int j = 0; j < arrayID.Count; j++)
                 {
                     if (j < 8)
                     {
-                        Card c = new Card(arrayID[j], control, 190 * a, 250);
+                        Card c = new Card(tId, arrayID[j], control, 190 * a, 250);
                         lstCard.Add(c);
                         a++;
                     }
@@ -138,13 +139,13 @@ namespace Train
                     {
                         if (j >= 8 && j < 16)
                         {
-                            Card c = new Card(arrayID[j], control, 190 * b, 500);
+                            Card c = new Card(tId, arrayID[j], control, 190 * b, 500);
                             lstCard.Add(c);
                             b++;
                         }
                         else
                         {
-                            Card c = new Card(arrayID[j], control, 190 * q, 700);
+                            Card c = new Card(tId, arrayID[j], control, 190 * q, 700);
                             lstCard.Add(c);
                             q++;
                         }

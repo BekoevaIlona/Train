@@ -117,6 +117,7 @@
             this.buttonPlay.TabIndex = 9;
             this.buttonPlay.Text = "играть";
             this.buttonPlay.UseVisualStyleBackColor = false;
+            this.buttonPlay.Click += new System.EventHandler(this.buttonPlay_Click);
             // 
             // buttonNextCards
             // 

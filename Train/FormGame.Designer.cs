@@ -28,8 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.buttonMenu = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
+            this.timerTrainMove = new System.Windows.Forms.Timer(this.components);
+            this.pictureBoxLife = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLife)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonMenu
@@ -66,6 +70,24 @@
             this.buttonClose.Size = new System.Drawing.Size(40, 40);
             this.buttonClose.TabIndex = 2;
             this.buttonClose.UseVisualStyleBackColor = true;
+            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
+            // 
+            // timerTrainMove
+            // 
+            this.timerTrainMove.Enabled = true;
+            this.timerTrainMove.Interval = 5;
+            this.timerTrainMove.Tick += new System.EventHandler(this.timerTrainMove_Tick);
+            // 
+            // pictureBoxLife
+            // 
+            this.pictureBoxLife.Image = global::Train.Properties.Resources._5;
+            this.pictureBoxLife.Location = new System.Drawing.Point(984, 765);
+            this.pictureBoxLife.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBoxLife.Name = "pictureBoxLife";
+            this.pictureBoxLife.Size = new System.Drawing.Size(504, 124);
+            this.pictureBoxLife.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxLife.TabIndex = 25;
+            this.pictureBoxLife.TabStop = false;
             // 
             // FormGame
             // 
@@ -75,6 +97,7 @@
             this.BackgroundImage = global::Train.Properties.Resources.FormGame;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1500, 900);
+            this.Controls.Add(this.pictureBoxLife);
             this.Controls.Add(this.buttonMenu);
             this.Controls.Add(this.buttonClose);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -82,6 +105,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormGame";
             this.Load += new System.EventHandler(this.FormGame_Load);
+            this.Shown += new System.EventHandler(this.FormGame_Shown);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLife)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -90,5 +115,7 @@
 
         private System.Windows.Forms.Button buttonMenu;
         private System.Windows.Forms.Button buttonClose;
+        private System.Windows.Forms.Timer timerTrainMove;
+        private System.Windows.Forms.PictureBox pictureBoxLife;
     }
 }
