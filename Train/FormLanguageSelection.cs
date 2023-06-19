@@ -60,7 +60,10 @@ namespace Train
         private void buttonGeorgian_Click(object sender, EventArgs e)
         {
             SaveLanguageSelection("Georgian");
-            
+            FormMenu formMenu = new FormMenu(username);
+            formMenu.Show();
+            MessageBox.Show("Теперь вы можете выбрать тематику для обучения!");
+            this.Hide();
 
         }
 

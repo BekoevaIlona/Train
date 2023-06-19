@@ -54,29 +54,29 @@ namespace Train
             File.WriteAllText(userFile, fileContents);
 
             // Вывести сообщение о выбранной тематике
-            string message = "";
-            switch (topic)
-            {
-                case "t1":
-                    message = "Дом";
-                    break;
-                case "t2":
-                    message = "Домашние животные";
-                    break;
-                case "t3":
-                    message = "Дикие животные";
-                    break;
-                case "t4":
-                    message = "Овощи, фрукты и ягоды";
-                    break;
-                case "t5":
-                    message = "Члены семьи и профессии";
-                    break;
-                default:
-                    message = "неизвестная тематика";
-                    break;
-            }
-            MessageBox.Show($"Вы выбрали тематику \"{message}\"");
+            //string message = "";
+            //switch (topic)
+            //{
+            //    case "t1":
+            //        message = "Дом";
+            //        break;
+            //    case "t2":
+            //        message = "Домашние животные";
+            //        break;
+            //    case "t3":
+            //        message = "Дикие животные";
+            //        break;
+            //    case "t4":
+            //        message = "Овощи, фрукты и ягоды";
+            //        break;
+            //    case "t5":
+            //        message = "Члены семьи и профессии";
+            //        break;
+            //    default:
+            //        message = "неизвестная тематика";
+            //        break;
+            //}
+            //MessageBox.Show($"Вы выбрали тематику \"{message}\"");
         }
 
         private void FormTopic_Load(object sender, EventArgs e)

@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace Train
 {
@@ -45,6 +47,19 @@ namespace Train
                 this.SizeMode = PictureBoxSizeMode.Zoom;
                 this.Size = new Size(170, 170);
                 Location = new Point(x, y);
+                this.MouseClick += new MouseEventHandler(PlaySound);
+            }
+
+            private void PlaySound(object sender, MouseEventArgs e)
+            {
+                string soundPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "audio", $"{idTopic}p{id}{language}.wav");
+                if (File.Exists(soundPath))
+                {
+                    using (var player = new SoundPlayer(soundPath))
+                    {
+                        player.Play();
+                    }
+                }
             }
 
             private void Card_MouseUp(object sender, MouseEventArgs e)
@@ -86,25 +101,25 @@ namespace Train
                 int y = 0;
                 int cardCounter = 0;
                 int cardsPerRow = 1;
-                int cardWidthWithPadding = (new Card(tId, 0, language, control, 0, 0)).Width + 1; 
+                int cardWidthWithPadding = (new Card(tId, 0, language, control, 0, 0)).Width + 1;
                 for (int j = 0; j < countCards; j++)
                 {
                     // Проверяю, нужно ли показывать текущую картинку
-                    if (j < startIndex  || j >= startIndex + 3) continue;
+                    if (j < startIndex || j >= startIndex + 3) continue;
 
                     Card c = new Card(tId, j, language, control, x, y);
                     control.Controls.Add(c);
                     lstCard.Add(c);
                     cardCounter++;
-                    if (cardCounter >= cardsPerRow) 
+                    if (cardCounter >= cardsPerRow)
                     {
-                        y += c.Height + 1; 
-                        x = 0; 
-                        cardCounter = 0; 
+                        y += c.Height + 1;
+                        x = 0;
+                        cardCounter = 0;
                     }
                     else
                     {
-                        x += cardWidthWithPadding; 
+                        x += cardWidthWithPadding;
                     }
                 }
             }
@@ -137,7 +152,7 @@ namespace Train
                 }
             }
 
-            
+
         }
     }
 }
