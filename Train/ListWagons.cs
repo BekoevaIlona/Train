@@ -35,6 +35,7 @@ namespace Train
                 string imagePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Wagons", $"{tId}p{IdPicture}{language}.JPG");
                 this.Load(imagePath);
                 control.Controls.Add(this);
+                this.SizeMode = PictureBoxSizeMode.StretchImage;
                 this.Size = new Size(270, 170);
                 Location = new Point(x, y);
             }

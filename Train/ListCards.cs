@@ -129,7 +129,7 @@ namespace Train
                 int a = 0, b = 0, q = 0;
                 for (int j = 0; j < arrayID.Count; j++)
                 {
-                    if (j < 8)
+                    if (j < 5)
                     {
                         Card c = new Card(tId, arrayID[j], control, 190 * a, 250);
                         lstCard.Add(c);
@@ -137,7 +137,7 @@ namespace Train
                     }
                     else
                     {
-                        if (j >= 8 && j < 16)
+                        if (j >= 8 && j < 10)
                         {
                             Card c = new Card(tId, arrayID[j], control, 190 * b, 500);
                             lstCard.Add(c);
