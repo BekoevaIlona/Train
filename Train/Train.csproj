@@ -84,7 +84,6 @@
     <Compile Include="ListWagons.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="PlayerData.cs" />
     <Compile Include="FormAuthorization.cs">
       <SubType>Form</SubType>
     </Compile>
