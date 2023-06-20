@@ -51,16 +51,9 @@ namespace Train
         }
         private void buttonInstruction_Click(object sender, EventArgs e)
         {
-            try
-            {
-                this.Hide();
-                instructions.ShowDialog();
-            }
-            catch (Exception ex)
-            {
-                // Обработка исключения
-                MessageBox.Show("Произошла ошибка: " + ex.Message);
-            }
+            this.Hide();
+            instructions.ShowDialog();
+            
         }
 
         private void buttonRating_Click(object sender, EventArgs e)
@@ -71,30 +64,29 @@ namespace Train
 
         private void buttonLanguage_Click(object sender, EventArgs e)
         {
-            // Отобразить форму выбора темы
+            
             FormLanguageSelection language = new FormLanguageSelection(username);
             DialogResult result = language.ShowDialog();
             string usersDirectory = $"{Directory.GetCurrentDirectory()}\\users";
             string userFile = $"{usersDirectory}\\{username}.txt";
             
-            // Проверяем, существует ли файл с данными пользователя
+            
             if (File.Exists(userFile))
             {
-                // Считываем содержимое файла в строку
+                
                 string fileContent = File.ReadAllText(userFile);
 
-                // Разбиваем строку на отдельные элементы, используя запятую в качестве разделителя
                 string[] elements = fileContent.Split(',');
 
-                // Проверяем, что в строке достаточно элементов для получения нужного элемента
+                // Проверяю, что в строке достаточно элементов для получения нужного элемента
                 if (elements.Length >= 3)
                 {
-                    string l = elements[2]; // Получаем язык из третьего элемента строки
+                    string l = elements[2]; // Получаю язык из третьего элемента строки
 
-                    // Проверяем, что язык не пустой
+                    // Проверяю, что язык не пустой
                     if (!string.IsNullOrEmpty(l))
                     {
-                        buttonTopic.Enabled = true; // Разблокируем кнопку
+                        buttonTopic.Enabled = true; // Разблокирую кнопку
                     }
                 }
             }

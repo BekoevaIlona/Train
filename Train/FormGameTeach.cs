@@ -28,8 +28,6 @@ namespace Train
             string rulesText = "Совсем скоро ты отправишься в незабываемое приключение!\n\nНо перед этим тебе нужно изучить несколько новых слов\n\nДля того, чтобы изучать новые слова, ты находишься в\nрежиме \"Учить слова\".\n\nСейчас перед тобой находится несколько картинок-образов,\nчтобы услышать произношение слова, нажми на картинку,\nтакже, под каждой картинкой будет написано слово\nпрочитай его и запомни это пригодится тебе в\nследующем режиме.\n\nУдачи в изучении новых слов!";
             labelRules.Text = rulesText;
 
-
-            //ListCards = new ListCards(tId, 20, panelCards, AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Right);
         }
 
         private void buttonMenu_Click(object sender, EventArgs e)

@@ -34,24 +34,22 @@ namespace Train
             string usersDirectory = $"{Directory.GetCurrentDirectory()}/users";
             string userFile = $"{usersDirectory}/{username}.txt";
 
-            // Прочитать содержимое файла пользователя
             string fileContents = File.Exists(userFile) ? File.ReadAllText(userFile) : "";
 
-            // Проверить, содержит ли файл тему на 4-м месте
             string[] userData = fileContents.Split(',');
             if (userData.Length >= 4)
             {
-                userData[3] = topic; // Заменить элемент на 4-м месте на тему
+                userData[3] = topic; // Заменяю элемент на 4-м месте на тему
                 fileContents = string.Join(",", userData);
             }
             else
             {
-                // Добавить новую тему в файл
+                // Добавляю новую тему в файл
                 fileContents += $",{topic},0";
             }
-
-            // Записать обновленное содержимое обратно в файл
             File.WriteAllText(userFile, fileContents);
+            //короче просто тоже самое что и с языками, только записываю это на четвуртое место. Лучше вынести в отдельный класс, но мне пока лень
+            
 
             // Вывести сообщение о выбранной тематике
             //string message = "";

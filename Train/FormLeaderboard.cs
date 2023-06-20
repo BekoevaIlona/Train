@@ -42,13 +42,13 @@ namespace Train
         }
         private void FormLeaderboard_Load(object sender, EventArgs e)
         {
-            // Получаем список файлов в папке
+            // Получаю список файлов в папке
             string folderPath = Path.Combine(Application.StartupPath, "users");
             string[] files = Directory.GetFiles(folderPath, "*.txt");
 
             List<Player> players = new List<Player>();
 
-            // Читаем данные из каждого файла и создаем объекты Player
+            // Читаю данные из каждого файла и создаем объекты Player
             foreach (string file in files)
             {
                 string[] lines = File.ReadAllLines(file);
@@ -70,10 +70,10 @@ namespace Train
                 }
             }
 
-            // Сортируем игроков по баллам в порядке убывания
+            // Сортирую игроков по баллам в порядке убывания
             players = players.OrderByDescending(p => p.Score).ToList();
 
-            // Выводим результаты
+            // Вывожу результаты
             listBoxLeaderboard.Items.Clear();
 
             int i = 1;
@@ -85,10 +85,7 @@ namespace Train
             }
         }
 
-        private void listBoxLeaderboard_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }
 

@@ -20,8 +20,6 @@ namespace Train
         {
             InitializeComponent();
             this.username = username;
-            //playerData = new PlayerData(username, "", "");
-            //playerData.LoadData();
         }
         public FormLanguageSelection()
         {
@@ -73,23 +71,23 @@ namespace Train
             string usersDirectory = $"{Directory.GetCurrentDirectory()}\\users";
             string userFile = $"{usersDirectory}\\{username}.txt";
 
-            // Прочитать содержимое файла пользователя
+            // Читаю содержимое файла пользователя
             string fileContents = File.Exists(userFile) ? File.ReadAllText(userFile) : "";
 
-            // Проверить, содержит ли файл язык на 3-м месте
+            // Проверяю, содержит ли файл язык на 3-м месте
             string[] userData = fileContents.Split(',');
             if (userData.Length >= 3)
             {
-                userData[2] = language; // Заменить элемент на 3-м месте на язык
+                userData[2] = language; // Заменяю элемент на 3-м месте на язык
                 fileContents = string.Join(",", userData);
             }
             else
             {
-                // Добавить новый язык в файл
+                // Добавляю новый язык в файл
                 fileContents += $",{language}";
             }
 
-            // Записать обновленное содержимое обратно в файл
+            // Записываю обновленное содержимое обратно в файл
             File.WriteAllText(userFile, fileContents);
 
         }
