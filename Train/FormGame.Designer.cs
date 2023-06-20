@@ -34,6 +34,7 @@
             this.timerTrainMove = new System.Windows.Forms.Timer(this.components);
             this.pictureBoxLife = new System.Windows.Forms.PictureBox();
             this.labelScores = new System.Windows.Forms.Label();
+            this.buttonCheck = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLife)).BeginInit();
             this.SuspendLayout();
             // 
@@ -102,6 +103,18 @@
             this.labelScores.Text = "label1";
             this.labelScores.Click += new System.EventHandler(this.labelScores_Click);
             // 
+            // buttonCheck
+            // 
+            this.buttonCheck.Font = new System.Drawing.Font("Gill Sans MT Ext Condensed Bold", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCheck.Location = new System.Drawing.Point(12, 791);
+            this.buttonCheck.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonCheck.Name = "buttonCheck";
+            this.buttonCheck.Size = new System.Drawing.Size(177, 98);
+            this.buttonCheck.TabIndex = 27;
+            this.buttonCheck.Text = "check";
+            this.buttonCheck.UseVisualStyleBackColor = true;
+            this.buttonCheck.Click += new System.EventHandler(this.buttonCheck_Click);
+            // 
             // FormGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -109,6 +122,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1500, 900);
+            this.Controls.Add(this.buttonCheck);
             this.Controls.Add(this.labelScores);
             this.Controls.Add(this.pictureBoxLife);
             this.Controls.Add(this.buttonMenu);
@@ -132,5 +146,6 @@
         private System.Windows.Forms.Timer timerTrainMove;
         private System.Windows.Forms.PictureBox pictureBoxLife;
         private System.Windows.Forms.Label labelScores;
+        private System.Windows.Forms.Button buttonCheck;
     }
 }

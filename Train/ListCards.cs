@@ -18,27 +18,29 @@ namespace Train
             public int id;
             public string idTopic;
             public string language;
-            public Card(string tId, int pId, Control control, int x, int y)
+            public Card(string tId, int pId, string language, Control control, int x, int y)
             {
                 this.id = pId;
                 this.idTopic = tId;
                 this.Tag = pId;
-
+                this.language = language;
                 string imagePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "cards", $"{tId}p{pId}Russian.JPG");
                 this.Load(imagePath);
                 control.Controls.Add(this);
                 this.SizeMode = PictureBoxSizeMode.Zoom;
                 this.Size = new Size(140, 140);
                 Location = new Point(x, y);
+                
                 this.MouseDown += Card_MouseDown;
                 this.MouseMove += Card_MouseMove;
                 this.MouseUp += Card_MouseUp;
-                this.MouseClick += new MouseEventHandler(PlaySound);
+
+                this.Click += PlaySound;
             }
-            public Card(string tId, int pId, string language, Control control, int x, int y)
+            public Card(int pId, string tId,  string language, Control control, int x, int y)
             {
-                this.idTopic = tId;
                 this.id = pId;
+                this.idTopic = tId;
                 this.Tag = pId;
                 this.language = language;
                 this.Location = new Point(x, y);
@@ -52,21 +54,28 @@ namespace Train
                 this.MouseClick += new MouseEventHandler(PlaySound);
             }
 
-            private void PlaySound(object sender, MouseEventArgs e)
+            private void PlaySound(object sender, EventArgs e)
             {
                 string soundPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "audio", $"{idTopic}p{id}{language}.wav");
                 if (File.Exists(soundPath))
                 {
+                    // Проигрываем звуковой файл
                     using (var player = new SoundPlayer(soundPath))
                     {
                         player.Play();
                     }
+                }
+                else
+                {
+                    // Обрабатываем случай, когда файл не найден
+                    MessageBox.Show("Файл звука не найден!");
                 }
             }
 
             private void Card_MouseUp(object sender, MouseEventArgs e)
             {
                 FormGame.MovedCard = null;
+
             }
 
             int startX, startY;
@@ -81,6 +90,7 @@ namespace Train
 
             private void Card_MouseDown(object sender, MouseEventArgs e)
             {
+
                 startX = e.X;
                 startY = e.Y;
                 FormGame.MovedCard = this;
@@ -103,13 +113,13 @@ namespace Train
                 int y = 0;
                 int cardCounter = 0;
                 int cardsPerRow = 1;
-                int cardWidthWithPadding = (new Card(tId, 0, language, control, 0, 0)).Width + 1;
+                int cardWidthWithPadding = (new Card( 0, tId, language, control, 0, 0)).Width + 1;
                 for (int j = 0; j < countCards; j++)
                 {
                     // Проверяю, нужно ли показывать текущую картинку
                     if (j < startIndex || j >= startIndex + 3) continue;
 
-                    Card c = new Card(tId, j, language, control, x, y);
+                    Card c = new Card(j, tId,language, control, x, y);
                     control.Controls.Add(c);
                     lstCard.Add(c);
                     cardCounter++;
@@ -125,14 +135,14 @@ namespace Train
                     }
                 }
             }
-            public ListCards(List<int> arrayID, string tId, Control control)
+            public ListCards(List<int> arrayID, string tId, Control control, string language)
             {
                 int a = 0, b = 0, q = 0;
                 for (int j = 0; j < arrayID.Count; j++)
                 {
                     if (j < 5)
                     {
-                        Card c = new Card(tId, arrayID[j], control, 190 * a, 500);
+                        Card c = new Card(tId, arrayID[j], language, control, 190 * a, 500);
                         lstCard.Add(c);
                         a++;
                     }
@@ -140,13 +150,13 @@ namespace Train
                     {
                         if (j >= 8 && j < 10)
                         {
-                            Card c = new Card(tId, arrayID[j], control, 190 * b, 500);
+                            Card c = new Card(tId, arrayID[j], language, control, 190 * b, 500);
                             lstCard.Add(c);
                             b++;
                         }
                         else
                         {
-                            Card c = new Card(tId, arrayID[j], control, 190 * q, 700);
+                            Card c = new Card(tId, arrayID[j], language, control, 190 * q, 700);
                             lstCard.Add(c);
                             q++;
                         }

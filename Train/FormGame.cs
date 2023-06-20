@@ -36,7 +36,7 @@ namespace Train
             string scores = userData.Length >= 5 ? userData[4] : "";
             labelScores.Text = scores;
             Level = new Level(lev);
-            ListCards = new ListCards( Level.IndexesCards, tId, this);
+            ListCards = new ListCards( Level.IndexesCards, tId,  this, language);
             ListWagons = new ListWagons(tId, Level.IndexesWagons, language, this);
 
             
@@ -67,7 +67,7 @@ namespace Train
         private void timerTrainMove_Tick(object sender, EventArgs e)
         {
             ListWagons.Move(speed);
-            ListWagons.Intersection(pictureBoxLife, MovedCard);
+            ListWagons.Intersection(pictureBoxLife, MovedCard, username);
         }
 
         private void buttonClose_Click(object sender, EventArgs e)
@@ -78,6 +78,11 @@ namespace Train
         private void labelScores_Click(object sender, EventArgs e)
         {
            
+        }
+
+        private void buttonCheck_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

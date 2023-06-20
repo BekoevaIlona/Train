@@ -13,6 +13,7 @@ namespace Train
 {
     namespace Train
     {
+
         public enum Languages
         {
             Ossetian,
@@ -64,7 +65,7 @@ namespace Train
                 }
             }
 
-            public void Intersection(PictureBox pictureBoxLife, Card movedCard)
+            public void Intersection(PictureBox pictureBoxLife, Card movedCard, string username)
             {
                 foreach (Wagon wagon in lstWagon)
                 {
@@ -76,6 +77,10 @@ namespace Train
                             Counter++;
                             wagon.Image = Image.FromFile("img/FilledWagon.png");
                             movedCard.Dispose();
+
+                            // Обновляем баллы игрока
+                            UpdateScore(username, 10); // например, добавляем 10 баллов
+
                             return;
                         }
 
@@ -88,9 +93,12 @@ namespace Train
 
                             if (life < 1)
                             {
+                                // Обновляем баллы игрока
+                                UpdateScore(username, -10); // например, отнимаем 10 баллов
+
                                 MessageBox.Show("Жизни закончились");
-                                //FormGameOver formGameOver = new FormGameOver();
-                                //formGameOver.Show();
+                                FormGameOver formGameOver = new FormGameOver();
+                                formGameOver.Show();
                                 return;
                             }
 
@@ -98,6 +106,36 @@ namespace Train
                         }
                     }
                 }
+            }
+
+            private void UpdateScore(string username, int scoreDelta)
+            {
+                string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "users", $"{username}.txt");
+                if (!File.Exists(filePath))
+                {
+                    throw new FileNotFoundException("File not found", filePath);
+                }
+
+                // Читаем все строки файла и ищем строку с именем пользователя
+                string[] lines = File.ReadAllLines(filePath);
+                for (int i = 0; i < lines.Length; i++)
+                {
+                    string[] userScore = lines[i].Split(',');
+                    if (userScore.Length == 5 && userScore[0] == username)
+                    {
+                        int score = int.Parse(userScore[4]);
+
+                        // Обновляем количество баллов
+                        score += scoreDelta;
+
+                        // Записываем изменения в строку
+                        lines[i] = $"{username},{userScore[1]},{userScore[2]},{userScore[3]},{score}";
+                        break;
+                    }
+                }
+
+                // Записываем изменения в файл
+                File.WriteAllLines(filePath, lines);
             }
 
             public void Move(int speed)

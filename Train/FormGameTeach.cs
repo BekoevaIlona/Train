@@ -62,17 +62,9 @@ namespace Train
             string languageMain = "Russian";
             string language = userData.Length >= 3 ? userData[2] : "";
             int countCards = 20;
-            Control control = panelCards;
 
-            // Удаляю все картинки из контрола
-            while (control.Controls.Count > 0)
-            {
-                control.Controls.Remove(control.Controls[0]);
-                panelCardsSelectedLanguage.Controls.Remove(panelCardsSelectedLanguage.Controls[0]);
-            }
-
-            // Очищаю список картинок
-            ListCards.lstCard.Clear();
+            // Вычисляю начальный индекс картинки для ListCards
+            int startIndex = cardListIndex;
 
             // Увеличиваю индекс первой картинки, которую нужно показать, на 3
             cardListIndex += 3;
@@ -83,14 +75,14 @@ namespace Train
                 cardListIndex = 0;
             }
 
-            // Вычисляю начальный индекс картинки для ListCards
-            int startIndex = cardListIndex;
+            // Удаляю все картинки из контрола
+            ListCards.lstCard.Clear();
+            panelCards.Controls.Clear();
+            panelCardsSelectedLanguage.Controls.Clear();
 
-            ListCards = new ListCards(tId, countCards, languageMain, control, startIndex);
+            // Обновляю список картинок
+            ListCards = new ListCards(tId, countCards, languageMain, panelCards, startIndex);
             ListCards = new ListCards(tId, countCards, language, panelCardsSelectedLanguage, startIndex);
-
-
-
 
         }
 
