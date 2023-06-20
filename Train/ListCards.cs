@@ -140,17 +140,17 @@ namespace Train
                 int a = 0, b = 0, q = 0;
                 for (int j = 0; j < arrayID.Count; j++)
                 {
-                    if (j < 5)
+                    if (j < 8)
                     {
-                        Card c = new Card(tId, arrayID[j], language, control, 190 * a, 500);
+                        Card c = new Card(tId, arrayID[j], language, control, 190 * a, 350);
                         lstCard.Add(c);
                         a++;
                     }
                     else
                     {
-                        if (j >= 8 && j < 10)
+                        if (j >= 8 && j < 16)
                         {
-                            Card c = new Card(tId, arrayID[j], language, control, 190 * b, 500);
+                            Card c = new Card(tId, arrayID[j], language, control, 190 * b, 550);
                             lstCard.Add(c);
                             b++;
                         }

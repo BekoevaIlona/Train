@@ -26,6 +26,7 @@ namespace Train
         public FormGame(string username)
         {
             InitializeComponent();
+            lev = Level.level;
             this.username = username;
             timerTrainMove.Start();
             string usersDirectory = $"{Directory.GetCurrentDirectory()}\\users";
@@ -37,20 +38,13 @@ namespace Train
             labelScores.Text = scores;
             Level = new Level(lev);
             ListCards = new ListCards( Level.IndexesCards, tId,  this, language);
-            ListWagons = new ListWagons(tId, Level.IndexesWagons, language, this);
+            ListWagons = new ListWagons(tId, Level.IndexesWagons, language, this, labelScores);
 
             
         }
         public FormGame()
         {
             InitializeComponent();
-        }
-
-       
-
-        private void buttonMenu_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void FormGame_Load(object sender, EventArgs e)
@@ -82,7 +76,41 @@ namespace Train
 
         private void buttonCheck_Click(object sender, EventArgs e)
         {
-            
+            if (ListWagons.counter == Level.level_lst[Level.level])
+            {
+                Level.level++;
+                if (Level.level == 3)
+                {
+                    //MessageBox.Show("Поздравляю!!! Вы прошли игру!!!");
+                    this.Hide();
+                    FormVictory formVictory = new FormVictory(username);
+                }
+                else
+                {
+                    //MessageBox.Show("Поздравляю!!! Вы успешно прошли уровень!!!");
+                    System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"audio\Victory.wav");
+                    player.Play();
+                    this.Activate();
+                    ListWagons.counter = 0;
+                    this.Hide();
+                    FormGame formGame = new FormGame(username);
+                    formGame.Show();
+                }
+
+            }
+            else
+            {
+                this.Hide();
+                FormGameOver formGameOver = new FormGameOver(username);
+                formGameOver.Show();
+            }
+        }
+
+        private void buttonMenu_Click(object sender, EventArgs e)
+        {
+            FormMenu formMenu = new FormMenu(); 
+            this.Hide();
+            formMenu.ShowDialog();
         }
     }
 }

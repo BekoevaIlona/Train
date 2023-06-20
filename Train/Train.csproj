@@ -71,6 +71,12 @@
     <Compile Include="FormTopic.Designer.cs">
       <DependentUpon>FormTopic.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormVictory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormVictory.Designer.cs">
+      <DependentUpon>FormVictory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Level.cs" />
     <Compile Include="ListCards.cs">
       <SubType>Component</SubType>
@@ -109,8 +115,11 @@
     <Compile Include="FormMenu.Designer.cs">
       <DependentUpon>FormMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="PlayerScoreManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="Resources\victory1.png" />
+    <None Include="Resources\victory.png" />
     <None Include="Resources\рейтинг1.jpg" />
     <None Include="Resources\рейтинг.jpg" />
     <None Include="Resources\иконка_пароль.png" />
@@ -122,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormGame.resx">
       <DependentUpon>FormGame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGameOver.resx">
+      <DependentUpon>FormGameOver.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormGameTeach.resx">
       <DependentUpon>FormGameTeach.cs</DependentUpon>
@@ -141,6 +153,9 @@
     <EmbeddedResource Include="FormTopic.resx">
       <DependentUpon>FormTopic.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormVictory.resx">
+      <DependentUpon>FormVictory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -153,6 +168,7 @@
     <None Include="Resources\FormTopic.png" />
     <None Include="Resources\FormGame.png" />
     <None Include="bin\Debug\Life\5.png" />
+    <None Include="Resources\GameOver.png" />
     <Content Include="Resources\ofont.ru_Bowler.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

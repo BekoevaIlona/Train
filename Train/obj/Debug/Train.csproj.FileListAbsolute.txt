@@ -150,3 +150,5 @@ C:\Users\Илона\OneDrive\Рабочий стол\Проект ( Языков
 C:\Users\Илона\OneDrive\Рабочий стол\Проект ( Языковая игра - Поезд )\Train2.0\Train\obj\Debug\Train.csproj.CoreCompileInputs.cache
 C:\Users\Илона\OneDrive\Рабочий стол\Проект ( Языковая игра - Поезд )\Train2.0\Train\obj\Debug\Train.exe
 C:\Users\Илона\OneDrive\Рабочий стол\Проект ( Языковая игра - Поезд )\Train2.0\Train\obj\Debug\Train.pdb
+C:\Users\Илона\OneDrive\Рабочий стол\Проект ( Языковая игра - Поезд )\Train2.0\Train\obj\Debug\Train.FormGameOver.resources
+C:\Users\Илона\OneDrive\Рабочий стол\Проект ( Языковая игра - Поезд )\Train2.0\Train\obj\Debug\Train.FormVictory.resources

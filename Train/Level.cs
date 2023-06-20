@@ -1,15 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Train
 {
+
     class Level
     {
         public static int level = 0;
-        public static int[] level_lst = { 5, 15, 19 };
+        public static int[] level_lst = { 8, 12, 19 };
         public List<int> IndexesCards;
         public List<int> IndexesWagons;
         static Random rnd = new Random();
@@ -34,5 +37,7 @@ namespace Train
                 IndexesCards[n] = value;
             }
         }
+
+
     }
 }

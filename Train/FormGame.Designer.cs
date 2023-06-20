@@ -29,14 +29,54 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.buttonMenu = new System.Windows.Forms.Button();
-            this.buttonClose = new System.Windows.Forms.Button();
             this.timerTrainMove = new System.Windows.Forms.Timer(this.components);
-            this.pictureBoxLife = new System.Windows.Forms.PictureBox();
             this.labelScores = new System.Windows.Forms.Label();
             this.buttonCheck = new System.Windows.Forms.Button();
+            this.pictureBoxLife = new System.Windows.Forms.PictureBox();
+            this.buttonMenu = new System.Windows.Forms.Button();
+            this.buttonClose = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLife)).BeginInit();
             this.SuspendLayout();
+            // 
+            // timerTrainMove
+            // 
+            this.timerTrainMove.Interval = 5;
+            this.timerTrainMove.Tick += new System.EventHandler(this.timerTrainMove_Tick);
+            // 
+            // labelScores
+            // 
+            this.labelScores.AutoSize = true;
+            this.labelScores.Font = new System.Drawing.Font("a_MachinaOrtoSls", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelScores.Location = new System.Drawing.Point(352, 13);
+            this.labelScores.Name = "labelScores";
+            this.labelScores.Size = new System.Drawing.Size(193, 70);
+            this.labelScores.TabIndex = 26;
+            this.labelScores.Text = "label1";
+            this.labelScores.Click += new System.EventHandler(this.labelScores_Click);
+            // 
+            // buttonCheck
+            // 
+            this.buttonCheck.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonCheck.Font = new System.Drawing.Font("Gill Sans MT Ext Condensed Bold", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCheck.Location = new System.Drawing.Point(1282, 755);
+            this.buttonCheck.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonCheck.Name = "buttonCheck";
+            this.buttonCheck.Size = new System.Drawing.Size(177, 98);
+            this.buttonCheck.TabIndex = 27;
+            this.buttonCheck.Text = "check";
+            this.buttonCheck.UseVisualStyleBackColor = true;
+            this.buttonCheck.Click += new System.EventHandler(this.buttonCheck_Click);
+            // 
+            // pictureBoxLife
+            // 
+            this.pictureBoxLife.Image = global::Train.Properties.Resources._5;
+            this.pictureBoxLife.Location = new System.Drawing.Point(12, 11);
+            this.pictureBoxLife.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBoxLife.Name = "pictureBoxLife";
+            this.pictureBoxLife.Size = new System.Drawing.Size(319, 76);
+            this.pictureBoxLife.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxLife.TabIndex = 25;
+            this.pictureBoxLife.TabStop = false;
             // 
             // buttonMenu
             // 
@@ -56,6 +96,7 @@
             this.buttonMenu.Size = new System.Drawing.Size(60, 60);
             this.buttonMenu.TabIndex = 3;
             this.buttonMenu.UseVisualStyleBackColor = false;
+            this.buttonMenu.Click += new System.EventHandler(this.buttonMenu_Click);
             // 
             // buttonClose
             // 
@@ -75,45 +116,6 @@
             this.buttonClose.TabIndex = 2;
             this.buttonClose.UseVisualStyleBackColor = true;
             this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
-            // 
-            // timerTrainMove
-            // 
-            this.timerTrainMove.Interval = 5;
-            this.timerTrainMove.Tick += new System.EventHandler(this.timerTrainMove_Tick);
-            // 
-            // pictureBoxLife
-            // 
-            this.pictureBoxLife.Image = global::Train.Properties.Resources._5;
-            this.pictureBoxLife.Location = new System.Drawing.Point(12, 11);
-            this.pictureBoxLife.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBoxLife.Name = "pictureBoxLife";
-            this.pictureBoxLife.Size = new System.Drawing.Size(319, 76);
-            this.pictureBoxLife.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxLife.TabIndex = 25;
-            this.pictureBoxLife.TabStop = false;
-            // 
-            // labelScores
-            // 
-            this.labelScores.AutoSize = true;
-            this.labelScores.Font = new System.Drawing.Font("a_MachinaOrtoSls", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelScores.Location = new System.Drawing.Point(352, 13);
-            this.labelScores.Name = "labelScores";
-            this.labelScores.Size = new System.Drawing.Size(193, 70);
-            this.labelScores.TabIndex = 26;
-            this.labelScores.Text = "label1";
-            this.labelScores.Click += new System.EventHandler(this.labelScores_Click);
-            // 
-            // buttonCheck
-            // 
-            this.buttonCheck.Font = new System.Drawing.Font("Gill Sans MT Ext Condensed Bold", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCheck.Location = new System.Drawing.Point(12, 791);
-            this.buttonCheck.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonCheck.Name = "buttonCheck";
-            this.buttonCheck.Size = new System.Drawing.Size(177, 98);
-            this.buttonCheck.TabIndex = 27;
-            this.buttonCheck.Text = "check";
-            this.buttonCheck.UseVisualStyleBackColor = true;
-            this.buttonCheck.Click += new System.EventHandler(this.buttonCheck_Click);
             // 
             // FormGame
             // 

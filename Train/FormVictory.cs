@@ -7,22 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Train
 {
-    public partial class FormGameOver : Form
+    public partial class FormVictory : Form
     {
         string username;
-        public FormGameOver(string username)
+
+        public FormVictory(string username)
         {
             InitializeComponent();
             this.username = username;
-            
         }
 
-        private void FormGameOver_Load(object sender, EventArgs e)
+        private void FormVictory_Load(object sender, EventArgs e)
         {
-            System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"audio\GameOver.wav");
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"audio\FormVictory.wav");
             player.Play();
             this.Activate();
             this.TopMost = true;
@@ -33,14 +34,21 @@ namespace Train
             Application.Exit();
         }
 
-        private void buttonYES_Click(object sender, EventArgs e)
+        private void button7_Click(object sender, EventArgs e)
         {
             this.Hide();
-            FormGameTeach gameTeach = new FormGameTeach(username);
-            gameTeach.Show();
+            FormMenu formMenu = new FormMenu();
+            formMenu.Show(this);
         }
 
         private void buttonNO_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormMenu formMenu = new FormMenu(username);
+            formMenu.Show();
+        }
+
+        private void buttonYES_Click(object sender, EventArgs e)
         {
             this.Hide();
             FormMenu formMenu = new FormMenu(username);

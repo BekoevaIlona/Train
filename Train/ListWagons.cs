@@ -46,6 +46,7 @@ namespace Train
             {
                 Left += speed;
             }
+
         }
 
         public class ListWagons
@@ -53,17 +54,19 @@ namespace Train
             private readonly List<Wagon> lstWagon = new List<Wagon>();
             int life = 5;
             public static int counter = 0;
+            private Label labelScores;
 
-            public static int Counter { get; private set; }
-
-            public ListWagons(string tId, List<int> arrayID, string language, Control control)
+            public ListWagons(string tId, List<int> arrayID, string language, Control control,Label labelScores)
             {
+                this.labelScores = labelScores;
                 for (int j = 0; j < arrayID.Count; j++)
                 {
                     Wagon wagon = new Wagon(tId, arrayID[j], language, control, 270*(-1) * j, 150);
                     lstWagon.Add(wagon);
                 }
+
             }
+
 
             public void Intersection(PictureBox pictureBoxLife, Card movedCard, string username)
             {
@@ -74,13 +77,16 @@ namespace Train
                         if (wagon.Tag.ToString() == FormGame.MovedCard.Tag.ToString())
                         {
                             FormGame.MovedCard = null;
-                            Counter++;
+                            counter++;
                             wagon.Image = Image.FromFile("img/FilledWagon.png");
                             movedCard.Dispose();
 
                             // Обновляем баллы игрока
-                            UpdateScore(username, 10); // например, добавляем 10 баллов
+                            PlayerScoreManager.UpdateScore(username, 10); // например, добавляем 10 баллов
+                                                                          // Обновляем баллы игрока
 
+                            // Обновляем значение лейбла
+                            labelScores.Text = PlayerScoreManager.GetScore(username).ToString();
                             return;
                         }
 
@@ -90,14 +96,13 @@ namespace Train
                         {
                             life--;
                             pictureBoxLife.Image = Image.FromFile($"Life/{life}.png");
-
+                            PlayerScoreManager.UpdateScore(username, -10); // например, отнимаем 10 баллов
+                            labelScores.Text = PlayerScoreManager.GetScore(username).ToString();// Обновляем баллы игрока
                             if (life < 1)
                             {
-                                // Обновляем баллы игрока
-                                UpdateScore(username, -10); // например, отнимаем 10 баллов
-
                                 MessageBox.Show("Жизни закончились");
-                                FormGameOver formGameOver = new FormGameOver();
+                                Form.ActiveForm.Hide();
+                                FormGameOver formGameOver = new FormGameOver(username);
                                 formGameOver.Show();
                                 return;
                             }
@@ -107,37 +112,6 @@ namespace Train
                     }
                 }
             }
-
-            private void UpdateScore(string username, int scoreDelta)
-            {
-                string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "users", $"{username}.txt");
-                if (!File.Exists(filePath))
-                {
-                    throw new FileNotFoundException("File not found", filePath);
-                }
-
-                // Читаем все строки файла и ищем строку с именем пользователя
-                string[] lines = File.ReadAllLines(filePath);
-                for (int i = 0; i < lines.Length; i++)
-                {
-                    string[] userScore = lines[i].Split(',');
-                    if (userScore.Length == 5 && userScore[0] == username)
-                    {
-                        int score = int.Parse(userScore[4]);
-
-                        // Обновляем количество баллов
-                        score += scoreDelta;
-
-                        // Записываем изменения в строку
-                        lines[i] = $"{username},{userScore[1]},{userScore[2]},{userScore[3]},{score}";
-                        break;
-                    }
-                }
-
-                // Записываем изменения в файл
-                File.WriteAllLines(filePath, lines);
-            }
-
             public void Move(int speed)
             {
                 foreach (Wagon wagon in lstWagon)
@@ -146,5 +120,6 @@ namespace Train
                 }
             }
         }
+
     }
 }

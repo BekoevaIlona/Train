@@ -103,6 +103,16 @@ namespace Train.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap GameOver {
+            get {
+                object obj = ResourceManager.GetObject("GameOver", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap IconMenu {
             get {
                 object obj = ResourceManager.GetObject("IconMenu", resourceCulture);
@@ -136,6 +146,26 @@ namespace Train.Properties {
         internal static System.Drawing.Bitmap k2 {
             get {
                 object obj = ResourceManager.GetObject("k2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap victory {
+            get {
+                object obj = ResourceManager.GetObject("victory", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap victory1 {
+            get {
+                object obj = ResourceManager.GetObject("victory1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
