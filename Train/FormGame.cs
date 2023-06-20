@@ -24,9 +24,6 @@ namespace Train
         public FormGame(string username)
         {
             InitializeComponent();
-            //playerData = new PlayerData(username, language, topic);
-            //playerData.LoadData();
-            //playerData.SaveData();
             timerTrainMove.Start();
             string usersDirectory = $"{Directory.GetCurrentDirectory()}\\users";
             string userFile = $"{usersDirectory}\\{username}.txt";
@@ -34,7 +31,6 @@ namespace Train
             string language = userData.Length >= 3 ? userData[2] : "";
             string tId = userData.Length >= 4 ? userData[3] : "";
 
-            
             Level = new Level(lev);
             ListCards = new ListCards( Level.IndexesCards, tId, this);
             ListWagons = new ListWagons(tId, Level.IndexesWagons, language, this);

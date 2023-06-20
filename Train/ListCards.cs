@@ -33,6 +33,7 @@ namespace Train
                 this.MouseDown += Card_MouseDown;
                 this.MouseMove += Card_MouseMove;
                 this.MouseUp += Card_MouseUp;
+                this.MouseClick += new MouseEventHandler(PlaySound);
             }
             public Card(string tId, int pId, string language, Control control, int x, int y)
             {
@@ -131,7 +132,7 @@ namespace Train
                 {
                     if (j < 5)
                     {
-                        Card c = new Card(tId, arrayID[j], control, 190 * a, 250);
+                        Card c = new Card(tId, arrayID[j], control, 190 * a, 500);
                         lstCard.Add(c);
                         a++;
                     }

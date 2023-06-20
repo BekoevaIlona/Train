@@ -38,54 +38,55 @@
             // 
             // buttonMenu
             // 
+            this.buttonMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonMenu.BackColor = System.Drawing.Color.White;
             this.buttonMenu.BackgroundImage = global::Train.Properties.Resources.IconMenu;
             this.buttonMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonMenu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonMenu.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(26)))), ((int)(((byte)(12)))));
-            this.buttonMenu.FlatAppearance.BorderSize = 3;
+            this.buttonMenu.FlatAppearance.BorderSize = 0;
             this.buttonMenu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.buttonMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.buttonMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonMenu.Font = new System.Drawing.Font("Cooper Black", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonMenu.Location = new System.Drawing.Point(1407, 7);
+            this.buttonMenu.Location = new System.Drawing.Point(1362, 12);
             this.buttonMenu.Name = "buttonMenu";
-            this.buttonMenu.Size = new System.Drawing.Size(40, 40);
+            this.buttonMenu.Size = new System.Drawing.Size(60, 60);
             this.buttonMenu.TabIndex = 3;
             this.buttonMenu.UseVisualStyleBackColor = false;
             // 
             // buttonClose
             // 
+            this.buttonClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonClose.BackgroundImage = global::Train.Properties.Resources.крестик1;
             this.buttonClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonClose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(26)))), ((int)(((byte)(12)))));
-            this.buttonClose.FlatAppearance.BorderSize = 3;
+            this.buttonClose.FlatAppearance.BorderSize = 0;
             this.buttonClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.buttonClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonClose.Font = new System.Drawing.Font("Cooper Black", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonClose.Location = new System.Drawing.Point(1453, 7);
+            this.buttonClose.Location = new System.Drawing.Point(1428, 12);
             this.buttonClose.Name = "buttonClose";
-            this.buttonClose.Size = new System.Drawing.Size(40, 40);
+            this.buttonClose.Size = new System.Drawing.Size(60, 60);
             this.buttonClose.TabIndex = 2;
             this.buttonClose.UseVisualStyleBackColor = true;
             this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
             // 
             // timerTrainMove
             // 
-            this.timerTrainMove.Enabled = true;
             this.timerTrainMove.Interval = 5;
             this.timerTrainMove.Tick += new System.EventHandler(this.timerTrainMove_Tick);
             // 
             // pictureBoxLife
             // 
             this.pictureBoxLife.Image = global::Train.Properties.Resources._5;
-            this.pictureBoxLife.Location = new System.Drawing.Point(984, 765);
+            this.pictureBoxLife.Location = new System.Drawing.Point(12, 11);
             this.pictureBoxLife.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBoxLife.Name = "pictureBoxLife";
-            this.pictureBoxLife.Size = new System.Drawing.Size(504, 124);
-            this.pictureBoxLife.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxLife.Size = new System.Drawing.Size(312, 70);
+            this.pictureBoxLife.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxLife.TabIndex = 25;
             this.pictureBoxLife.TabStop = false;
             // 
@@ -94,7 +95,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = global::Train.Properties.Resources.FormGame;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1500, 900);
             this.Controls.Add(this.pictureBoxLife);

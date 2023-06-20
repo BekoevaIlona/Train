@@ -32,11 +32,12 @@ namespace Train
                 Tag = pId;
                 this.idTopic = tId;
 
-                string imagePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Wagons", $"{tId}p{IdPicture}{language}.JPG");
+                string imagePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "wagons", $"{tId}p{IdPicture}{language}.JPG");
                 this.Load(imagePath);
                 control.Controls.Add(this);
-                this.SizeMode = PictureBoxSizeMode.StretchImage;
                 this.Size = new Size(270, 170);
+                this.SizeMode = PictureBoxSizeMode.StretchImage;
+                this.BackColor = Color.Transparent;
                 Location = new Point(x, y);
             }
 
@@ -57,7 +58,7 @@ namespace Train
             {
                 for (int j = 0; j < arrayID.Count; j++)
                 {
-                    Wagon wagon = new Wagon(tId, arrayID[j], language, control, 300 * (-1) * j, 10);
+                    Wagon wagon = new Wagon(tId, arrayID[j], language, control, 270*(-1) * j, 150);
                     lstWagon.Add(wagon);
                 }
             }
@@ -72,7 +73,7 @@ namespace Train
                         {
                             FormGame.MovedCard = null;
                             Counter++;
-                            wagon.Image = Image.FromFile("Resurses/FilledWagon.png");
+                            wagon.Image = Image.FromFile("img/FilledWagon.png");
                             movedCard.Dispose();
                             return;
                         }
