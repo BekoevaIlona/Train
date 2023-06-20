@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Train.Train;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Train
 {
@@ -21,19 +22,24 @@ namespace Train
         public int lev;
         ListCards ListCards;
         ListWagons ListWagons;
+        string username;
         public FormGame(string username)
         {
             InitializeComponent();
+            this.username = username;
             timerTrainMove.Start();
             string usersDirectory = $"{Directory.GetCurrentDirectory()}\\users";
             string userFile = $"{usersDirectory}\\{username}.txt";
             string[] userData = File.ReadAllText(userFile).Split(',');
             string language = userData.Length >= 3 ? userData[2] : "";
             string tId = userData.Length >= 4 ? userData[3] : "";
-
+            string scores = userData.Length >= 5 ? userData[4] : "";
+            labelScores.Text = scores;
             Level = new Level(lev);
             ListCards = new ListCards( Level.IndexesCards, tId, this);
             ListWagons = new ListWagons(tId, Level.IndexesWagons, language, this);
+
+            
         }
         public FormGame()
         {
@@ -67,6 +73,11 @@ namespace Train
         private void buttonClose_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void labelScores_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }

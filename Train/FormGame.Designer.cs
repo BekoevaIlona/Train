@@ -33,6 +33,7 @@
             this.buttonClose = new System.Windows.Forms.Button();
             this.timerTrainMove = new System.Windows.Forms.Timer(this.components);
             this.pictureBoxLife = new System.Windows.Forms.PictureBox();
+            this.labelScores = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLife)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,10 +86,21 @@
             this.pictureBoxLife.Location = new System.Drawing.Point(12, 11);
             this.pictureBoxLife.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBoxLife.Name = "pictureBoxLife";
-            this.pictureBoxLife.Size = new System.Drawing.Size(312, 70);
+            this.pictureBoxLife.Size = new System.Drawing.Size(319, 76);
             this.pictureBoxLife.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxLife.TabIndex = 25;
             this.pictureBoxLife.TabStop = false;
+            // 
+            // labelScores
+            // 
+            this.labelScores.AutoSize = true;
+            this.labelScores.Font = new System.Drawing.Font("a_MachinaOrtoSls", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelScores.Location = new System.Drawing.Point(352, 13);
+            this.labelScores.Name = "labelScores";
+            this.labelScores.Size = new System.Drawing.Size(193, 70);
+            this.labelScores.TabIndex = 26;
+            this.labelScores.Text = "label1";
+            this.labelScores.Click += new System.EventHandler(this.labelScores_Click);
             // 
             // FormGame
             // 
@@ -97,6 +109,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1500, 900);
+            this.Controls.Add(this.labelScores);
             this.Controls.Add(this.pictureBoxLife);
             this.Controls.Add(this.buttonMenu);
             this.Controls.Add(this.buttonClose);
@@ -108,6 +121,7 @@
             this.Shown += new System.EventHandler(this.FormGame_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLife)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -117,5 +131,6 @@
         private System.Windows.Forms.Button buttonClose;
         private System.Windows.Forms.Timer timerTrainMove;
         private System.Windows.Forms.PictureBox pictureBoxLife;
+        private System.Windows.Forms.Label labelScores;
     }
 }

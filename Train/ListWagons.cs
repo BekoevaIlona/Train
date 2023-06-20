@@ -50,7 +50,8 @@ namespace Train
         public class ListWagons
         {
             private readonly List<Wagon> lstWagon = new List<Wagon>();
-            private int life = 5;
+            int life = 5;
+            public static int counter = 0;
 
             public static int Counter { get; private set; }
 

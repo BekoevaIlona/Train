@@ -94,6 +94,7 @@
             this.panelCards.Name = "panelCards";
             this.panelCards.Size = new System.Drawing.Size(295, 616);
             this.panelCards.TabIndex = 7;
+            this.panelCards.Paint += new System.Windows.Forms.PaintEventHandler(this.panelCards_Paint);
             // 
             // panelCardsSelectedLanguage
             // 

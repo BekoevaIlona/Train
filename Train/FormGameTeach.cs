@@ -50,8 +50,7 @@ namespace Train
 
         private void FormGameTeach_Load(object sender, EventArgs e)
         {
-
-
+            buttonNextCards_Click(null, null);
         }
         private void buttonNextCards_Click(object sender, EventArgs e)
         {
@@ -100,6 +99,11 @@ namespace Train
             this.Close();
             FormGame formGame = new FormGame(username);
             formGame.ShowDialog();
+        }
+
+        private void panelCards_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
