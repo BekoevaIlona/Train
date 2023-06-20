@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Train;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Train
@@ -36,14 +37,14 @@ namespace Train
             username = textBoxLogin.Text;
             string password = textBoxPassword.Text;
 
-            // Проверяем, чтобы поля логина и пароля были заполнены
+            // Проверяю, чтобы поля логина и пароля были заполнены
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
                 MessageBox.Show("Введите логин и пароль");
                 return;
             }
 
-            // Проверяем, что пользователь с таким логином существует
+            // Проверяю, что пользователь с таким логином существует
             string userFile = $"{Directory.GetCurrentDirectory()}\\users\\{username}.txt";
             if (!File.Exists(userFile))
             {
@@ -51,16 +52,14 @@ namespace Train
                 return;
             }
 
-            // Сверяем пароли
+            // Сверяю пароли
             string[] data = File.ReadAllText(userFile).Split(',');
             if (data.Length >= 2 && data[1] == password)
             {
-                // Переходим на следующую форму
                 FormMenu formMenu = new FormMenu(username);
                 formMenu.Show();
                 this.Hide();
 
-                // Вход прошел успешно
                 MessageBox.Show($"Вход прошел успешно. Добро пожаловать, {username}!\nТеперь можете выбрать язык");
             }
             else
@@ -75,14 +74,14 @@ namespace Train
             username = textBoxLogin.Text;
             string password = textBoxPassword.Text;
 
-            // Проверяем, чтобы поля логина и пароля были заполнены
+            // Проверяю, чтобы поля логина и пароля были заполнены
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
                 MessageBox.Show("Введите логин и пароль");
                 return;
             }
 
-            // Записываем логин и пароль в файл
+            // Записываю логин и пароль в файл
             string userData = $"{username},{password}";
             string usersDirectory = $"{Directory.GetCurrentDirectory()}\\users";
             if (!Directory.Exists(usersDirectory))
@@ -92,11 +91,9 @@ namespace Train
             string userFile = $"{usersDirectory}\\{username}.txt";
             File.WriteAllText(userFile, userData);
 
-            // Переходим на следующую форму
             FormMenu formMenu = new FormMenu(username); formMenu.Show();
             this.Hide();
 
-            // Регистрация прошла успешно
             MessageBox.Show($"Регистрация прошла успешно. Добро пожаловать, {username}!\nТеперь можете выбрать язык");
         }
 
