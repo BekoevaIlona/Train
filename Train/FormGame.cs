@@ -82,8 +82,10 @@ namespace Train
                 if (Level.level == 3)
                 {
                     //MessageBox.Show("Поздравляю!!! Вы прошли игру!!!");
+                    PlayerScoreManager.UpdateScore(username, +100);
                     this.Hide();
                     FormVictory formVictory = new FormVictory(username);
+                    formVictory.Show();
                 }
                 else
                 {

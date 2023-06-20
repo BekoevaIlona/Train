@@ -59,7 +59,7 @@ namespace Train
                 string soundPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "audio", $"{idTopic}p{id}{language}.wav");
                 if (File.Exists(soundPath))
                 {
-                    // Проигрываем звуковой файл
+                    // Проигрываю звуковой файл
                     using (var player = new SoundPlayer(soundPath))
                     {
                         player.Play();
@@ -67,7 +67,6 @@ namespace Train
                 }
                 else
                 {
-                    // Обрабатываем случай, когда файл не найден
                     MessageBox.Show("Файл звука не найден!");
                 }
             }

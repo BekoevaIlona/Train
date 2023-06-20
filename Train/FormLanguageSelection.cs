@@ -15,7 +15,6 @@ namespace Train
     {
         private string username;
         static FormMenu formMenu = new FormMenu();
-        private PlayerData playerData;
 
         public FormLanguageSelection(string username)
         {

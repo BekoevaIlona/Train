@@ -101,6 +101,7 @@ namespace Train
                             if (life < 1)
                             {
                                 MessageBox.Show("Жизни закончились");
+                                PlayerScoreManager.UpdateScore(username, -100);
                                 Form.ActiveForm.Hide();
                                 FormGameOver formGameOver = new FormGameOver(username);
                                 formGameOver.Show();

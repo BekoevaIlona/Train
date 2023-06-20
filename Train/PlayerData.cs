@@ -53,27 +53,6 @@ namespace Train
 
         }
 
-        public string Username
-        {
-            get { return username; }
-        }
-
-        public string Language
-        {
-            get { return language; }
-            set { language = value; }
-        }
-
-        public string Topic
-        {
-            get { return topic; }
-            set { topic = value; }
-        }
-
-        public int Points
-        {
-            get { return points; }
-            set { points = value; }
-        }
+        
     }
 }
