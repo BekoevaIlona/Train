@@ -90,13 +90,12 @@ namespace Train
                 else
                 {
                     //MessageBox.Show("Поздравляю!!! Вы успешно прошли уровень!!!");
-                    System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"audio\Victory.wav");
-                    player.Play();
-                    this.Activate();
                     ListWagons.counter = 0;
                     this.Hide();
                     FormGame formGame = new FormGame(username);
                     formGame.Show();
+                    System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"audio\Victory.wav");
+                    player.Play();
                 }
 
             }

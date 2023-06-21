@@ -22,28 +22,28 @@ namespace Train
         {
             InitializeComponent();
             this.username = username;
-            PrivateFontCollection myfont = new PrivateFontCollection();
-            using (MemoryStream fontStream = new MemoryStream(Properties.Resources.MyFont))
-            {
-                var data = Marshal.AllocCoTaskMem((int)fontStream.Length);
-                byte[] fontdata = new byte[fontStream.Length];
-                fontStream.Read(fontdata, 0, (int)fontStream.Length);
-                Marshal.Copy(fontdata, 0, data, (int)fontStream.Length);
-                myfont.AddMemoryFont(data, (int)fontStream.Length);
-                Marshal.FreeCoTaskMem(data);
-            }
+            //PrivateFontCollection myfont = new PrivateFontCollection();
+            //using (MemoryStream fontStream = new MemoryStream(Properties.Resources.MyFont))
+            //{
+            //    var data = Marshal.AllocCoTaskMem((int)fontStream.Length);
+            //    byte[] fontdata = new byte[fontStream.Length];
+            //    fontStream.Read(fontdata, 0, (int)fontStream.Length);
+            //    Marshal.Copy(fontdata, 0, data, (int)fontStream.Length);
+            //    myfont.AddMemoryFont(data, (int)fontStream.Length);
+            //    Marshal.FreeCoTaskMem(data);
+            //}
 
-            buttonArmenian.Font = new Font(myfont.Families[0], 22);
-            buttonArmenian.UseCompatibleTextRendering = true;
+            //buttonArmenian.Font = new Font(myfont.Families[0], 22);
+            //buttonArmenian.UseCompatibleTextRendering = true;
 
-            buttonOssetian.Font = new Font(myfont.Families[0], 22);
-            buttonOssetian.UseCompatibleTextRendering = true;
+            //buttonOssetian.Font = new Font(myfont.Families[0], 22);
+            //buttonOssetian.UseCompatibleTextRendering = true;
 
-            buttonGeorgian.Font = new Font(myfont.Families[0], 22);
-            buttonGeorgian.UseCompatibleTextRendering = true;
+            //buttonGeorgian.Font = new Font(myfont.Families[0], 22);
+            //buttonGeorgian.UseCompatibleTextRendering = true;
 
-            buttonOK.Font = new Font(myfont.Families[0], 22);
-            buttonOK.UseCompatibleTextRendering = true;
+            //buttonOK.Font = new Font(myfont.Families[0], 22);
+            //buttonOK.UseCompatibleTextRendering = true;
         }
         public FormLanguageSelection()
         {

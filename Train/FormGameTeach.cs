@@ -15,8 +15,6 @@ namespace Train
 {
     public partial class FormGameTeach : Form
     {
-
-        Level Level;
         public int lev;
         ListCards ListCards;
         private string username;
@@ -24,6 +22,8 @@ namespace Train
         public FormGameTeach(string username)
         {
             InitializeComponent();
+            // Получаем список всех форм, кроме текущей
+           
             this.username = username;
             string rulesText = "Совсем скоро ты отправишься в незабываемое приключение!\n\nНо перед этим тебе нужно изучить несколько новых слов\n\nДля того, чтобы изучать новые слова, ты находишься в\nрежиме \"Учить слова\".\n\nСейчас перед тобой находится несколько картинок-образов,\nчтобы услышать произношение слова, нажми на картинку,\nтакже, под каждой картинкой будет написано слово\nпрочитай его и запомни это пригодится тебе в\nследующем режиме.\n\nУдачи в изучении новых слов!";
             labelRules.Text = rulesText;

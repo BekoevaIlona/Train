@@ -36,8 +36,8 @@ namespace Train
         private void buttonYES_Click(object sender, EventArgs e)
         {
             this.Hide();
-            FormGameTeach gameTeach = new FormGameTeach(username);
-            gameTeach.Show();
+            //FormGameTeach gameTeach = new FormGameTeach(username);
+            //gameTeach.Show();
         }
 
         private void buttonNO_Click(object sender, EventArgs e)

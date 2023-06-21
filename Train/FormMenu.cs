@@ -28,34 +28,34 @@ namespace Train
         public FormMenu()
         {
             InitializeComponent();
-            PrivateFontCollection myfont = new PrivateFontCollection();
-            using (MemoryStream fontStream = new MemoryStream(Properties.Resources.MyFont))
-            {
-                var data = Marshal.AllocCoTaskMem((int)fontStream.Length);
-                byte[] fontdata = new byte[fontStream.Length];
-                fontStream.Read(fontdata, 0, (int)fontStream.Length);
-                Marshal.Copy(fontdata, 0, data, (int)fontStream.Length);
-                myfont.AddMemoryFont(data, (int)fontStream.Length);
-                Marshal.FreeCoTaskMem(data);
-            }
+            //PrivateFontCollection myfont = new PrivateFontCollection();
+            //using (MemoryStream fontStream = new MemoryStream(Properties.Resources.MyFont))
+            //{
+            //    var data = Marshal.AllocCoTaskMem((int)fontStream.Length);
+            //    byte[] fontdata = new byte[fontStream.Length];
+            //    fontStream.Read(fontdata, 0, (int)fontStream.Length);
+            //    Marshal.Copy(fontdata, 0, data, (int)fontStream.Length);
+            //    myfont.AddMemoryFont(data, (int)fontStream.Length);
+            //    Marshal.FreeCoTaskMem(data);
+            //}
 
-            buttonAuthorization.Font = new Font(myfont.Families[0], 22);
-            buttonAuthorization.UseCompatibleTextRendering = true;
+            //buttonAuthorization.Font = new Font(myfont.Families[0], 22);
+            //buttonAuthorization.UseCompatibleTextRendering = true;
 
-            buttonLanguage.Font = new Font(myfont.Families[0], 22);
-            buttonLanguage.UseCompatibleTextRendering = true;
+            //buttonLanguage.Font = new Font(myfont.Families[0], 22);
+            //buttonLanguage.UseCompatibleTextRendering = true;
 
-            buttonPlay.Font = new Font(myfont.Families[0], 22);
-            buttonPlay.UseCompatibleTextRendering = true;
+            //buttonPlay.Font = new Font(myfont.Families[0], 22);
+            //buttonPlay.UseCompatibleTextRendering = true;
 
-            buttonInstruction.Font = new Font(myfont.Families[0], 22);
-            buttonInstruction.UseCompatibleTextRendering = true;
+            //buttonInstruction.Font = new Font(myfont.Families[0], 22);
+            //buttonInstruction.UseCompatibleTextRendering = true;
 
-            buttonTopic.Font = new Font(myfont.Families[0], 22);
-            buttonTopic.UseCompatibleTextRendering = true;
+            //buttonTopic.Font = new Font(myfont.Families[0], 22);
+            //buttonTopic.UseCompatibleTextRendering = true;
 
-            buttonRating.Font = new Font(myfont.Families[0], 22);
-            buttonRating.UseCompatibleTextRendering = true;
+            //buttonRating.Font = new Font(myfont.Families[0], 22);
+            //buttonRating.UseCompatibleTextRendering = true;
 
         }
 

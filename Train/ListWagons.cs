@@ -102,7 +102,7 @@ namespace Train
                             {
                                 MessageBox.Show("Жизни закончились");
                                 PlayerScoreManager.UpdateScore(username, -100);
-                                Form.ActiveForm.Hide();
+                                Form.ActiveForm.Close();
                                 FormGameOver formGameOver = new FormGameOver(username);
                                 formGameOver.Show();
                                 return;
