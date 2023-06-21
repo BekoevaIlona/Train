@@ -62,7 +62,7 @@
             this.buttonPlay.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(26)))), ((int)(((byte)(12)))));
             this.buttonPlay.FlatAppearance.BorderSize = 6;
             this.buttonPlay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonPlay.Font = new System.Drawing.Font("a_MachinaOrtoSls", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonPlay.Font = new System.Drawing.Font("Agency FB", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonPlay.Location = new System.Drawing.Point(619, 132);
             this.buttonPlay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonPlay.Name = "buttonPlay";
@@ -78,7 +78,7 @@
             this.buttonLanguage.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(26)))), ((int)(((byte)(12)))));
             this.buttonLanguage.FlatAppearance.BorderSize = 6;
             this.buttonLanguage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLanguage.Font = new System.Drawing.Font("a_MachinaOrtoSls", 22.2F, System.Drawing.FontStyle.Bold);
+            this.buttonLanguage.Font = new System.Drawing.Font("Agency FB", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLanguage.Location = new System.Drawing.Point(619, 292);
             this.buttonLanguage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonLanguage.Name = "buttonLanguage";
@@ -94,7 +94,7 @@
             this.buttonTopic.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(26)))), ((int)(((byte)(12)))));
             this.buttonTopic.FlatAppearance.BorderSize = 6;
             this.buttonTopic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonTopic.Font = new System.Drawing.Font("a_MachinaOrtoSls", 22.2F, System.Drawing.FontStyle.Bold);
+            this.buttonTopic.Font = new System.Drawing.Font("Agency FB", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonTopic.Location = new System.Drawing.Point(619, 372);
             this.buttonTopic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonTopic.Name = "buttonTopic";
@@ -110,7 +110,7 @@
             this.buttonInstruction.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(26)))), ((int)(((byte)(12)))));
             this.buttonInstruction.FlatAppearance.BorderSize = 6;
             this.buttonInstruction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonInstruction.Font = new System.Drawing.Font("a_MachinaOrtoSls", 22.2F, System.Drawing.FontStyle.Bold);
+            this.buttonInstruction.Font = new System.Drawing.Font("Agency FB", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonInstruction.Location = new System.Drawing.Point(619, 452);
             this.buttonInstruction.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonInstruction.Name = "buttonInstruction";
@@ -126,7 +126,7 @@
             this.buttonRating.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(26)))), ((int)(((byte)(12)))));
             this.buttonRating.FlatAppearance.BorderSize = 6;
             this.buttonRating.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRating.Font = new System.Drawing.Font("a_MachinaOrtoSls", 22.2F, System.Drawing.FontStyle.Bold);
+            this.buttonRating.Font = new System.Drawing.Font("Agency FB", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRating.Location = new System.Drawing.Point(619, 532);
             this.buttonRating.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonRating.Name = "buttonRating";
@@ -142,7 +142,7 @@
             this.buttonAuthorization.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(26)))), ((int)(((byte)(12)))));
             this.buttonAuthorization.FlatAppearance.BorderSize = 6;
             this.buttonAuthorization.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAuthorization.Font = new System.Drawing.Font("a_MachinaOrtoSls", 22.2F, System.Drawing.FontStyle.Bold);
+            this.buttonAuthorization.Font = new System.Drawing.Font("Agency FB", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAuthorization.Location = new System.Drawing.Point(619, 212);
             this.buttonAuthorization.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonAuthorization.Name = "buttonAuthorization";

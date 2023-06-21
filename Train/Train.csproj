@@ -168,6 +168,7 @@
     <None Include="Resources\FormGame.png" />
     <None Include="bin\Debug\Life\5.png" />
     <None Include="Resources\GameOver.png" />
+    <None Include="Resources\MyFont.bmp" />
     <Content Include="Resources\ofont.ru_Bowler.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

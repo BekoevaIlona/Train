@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,6 +22,28 @@ namespace Train
         {
             InitializeComponent();
             this.username = username;
+            PrivateFontCollection myfont = new PrivateFontCollection();
+            using (MemoryStream fontStream = new MemoryStream(Properties.Resources.MyFont))
+            {
+                var data = Marshal.AllocCoTaskMem((int)fontStream.Length);
+                byte[] fontdata = new byte[fontStream.Length];
+                fontStream.Read(fontdata, 0, (int)fontStream.Length);
+                Marshal.Copy(fontdata, 0, data, (int)fontStream.Length);
+                myfont.AddMemoryFont(data, (int)fontStream.Length);
+                Marshal.FreeCoTaskMem(data);
+            }
+
+            buttonArmenian.Font = new Font(myfont.Families[0], 22);
+            buttonArmenian.UseCompatibleTextRendering = true;
+
+            buttonOssetian.Font = new Font(myfont.Families[0], 22);
+            buttonOssetian.UseCompatibleTextRendering = true;
+
+            buttonGeorgian.Font = new Font(myfont.Families[0], 22);
+            buttonGeorgian.UseCompatibleTextRendering = true;
+
+            buttonOK.Font = new Font(myfont.Families[0], 22);
+            buttonOK.UseCompatibleTextRendering = true;
         }
         public FormLanguageSelection()
         {
