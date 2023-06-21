@@ -77,3 +77,7 @@
 - Начисление баллов за правильно пройденную игру(+100) или (-100) за проигрыш
 - Подсчёт жизней; -1 жизнь, если неправильно загруженный вагон заехал в тоннель
 - Озвучивание образов (при нажатии на картинку-образ происходит ее озвучивание)
+
+Ссылка на текст курсовой работы: https://docs.google.com/document/d/1G_McM0wIUBJ3aNQyFXb0Xk3TcEo28qke1N05QI68kOA/edit?usp=sharing 
+
+Ссылка на презентацию курсовой работы: https://docs.google.com/presentation/d/1Mc-72WotIeDzLkksBb6EGWdEFHUbJaZM5IIv-eg6AAQ/edit?usp=sharing
