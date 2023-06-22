@@ -42,9 +42,7 @@ namespace Train
 
         private void buttonNO_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            FormMenu formMenu = new FormMenu(username);
-            formMenu.Show();
+            Application.Exit();
         }
     }
 }

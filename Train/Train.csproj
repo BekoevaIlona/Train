@@ -117,6 +117,7 @@
     <Compile Include="PlayerScoreManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="Resources\правила.png" />
     <None Include="Resources\victory1.png" />
     <None Include="Resources\victory.png" />
     <None Include="Resources\рейтинг1.jpg" />

@@ -1,1 +1,1 @@
-ilona,ila,Ossetian,t1,800
+ilona,ila,Georgian,t5,1120
